@@ -232,6 +232,7 @@
             position: relative;
             padding-left: 45px;
             font-weight: 600;
+            cursor: pointer; /* Added for interactivity */
         }
 
         .service-list li::before {
@@ -279,6 +280,7 @@
             border-radius: 12px;
             padding: 30px;
             transition: background-color 0.3s ease;
+            cursor: pointer; /* Added for interactivity */
         }
         
         .signature-services-list li:hover {
@@ -295,6 +297,102 @@
         .signature-services-list p {
             font-size: 1rem;
             color: var(--white);
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-section .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .contact-section .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .contact-info a:hover {
+            color: var(--secondary-gold);
+        }
+        
+        .contact-section .social-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-section .social-links a {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .social-links a:hover {
+            color: var(--secondary-gold);
+        }
+        
+        /* --- Modal Styling --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+        
+        .close-btn {
+            color: var(--dark-text);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- Footer --- */
@@ -360,7 +458,7 @@
             <div class="navbar-links">
                 <a href="#services">Services</a>
                 <a href="#signature-services">Signature Services</a>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
             <div class="navbar-toggle" id="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -392,65 +490,65 @@
                 <div class="service-category">
                     <h3>Recruitment & Talent Acquisition</h3>
                     <ul class="service-list">
-                        <li>Executive Search & Headhunting</li>
-                        <li>Mass Recruitment for SMEs and Corporates</li>
-                        <li>Temporary & Contract Staffing Solutions</li>
-                        <li>Outsourced Recruitment Services (RPO)</li>
-                        <li>Internship & Graduate Trainee Placement Programs</li>
+                        <li data-title="Executive Search & Headhunting" data-description="We specialize in sourcing high-performing professionals and senior executives through discreet and strategic headhunting processes tailored to your business needs.">Executive Search & Headhunting</li>
+                        <li data-title="Mass Recruitment for SMEs and Corporates" data-description="Efficient large-scale recruitment solutions designed to help businesses quickly fill multiple roles without compromising on quality.">Mass Recruitment for SMEs and Corporates</li>
+                        <li data-title="Temporary & Contract Staffing Solutions" data-description="Flexible staffing options to meet short-term project needs, maternity cover, or peak business periods with qualified, vetted professionals.">Temporary & Contract Staffing Solutions</li>
+                        <li data-title="Outsourced Recruitment Services (RPO)" data-description="Let us handle your entire hiring process from sourcing to onboarding, while you focus on growing your business.">Outsourced Recruitment Services (RPO)</li>
+                        <li data-title="Internship & Graduate Trainee Placement Programs" data-description="We design and manage internship and graduate programs that help organizations develop future talent while supporting youth employment.">Internship & Graduate Trainee Placement Programs</li>
                     </ul>
                 </div>
 
                 <div class="service-category">
                     <h3>HR Consulting & Advisory</h3>
                     <ul class="service-list">
-                        <li>HR Department Setup for Startups & SMEs</li>
-                        <li>HR Policy & Employee Handbook Development</li>
-                        <li>HR Audits & Compliance Checks</li>
-                        <li>Organizational Restructuring & Change Management</li>
-                        <li>HR Technology Advisory (HRIS/Payroll Systems)</li>
+                        <li data-title="HR Department Setup for Startups & SMEs" data-description="From scratch, we help build your HR foundation—including structures, roles, and compliance systems tailored to your business stage.">HR Department Setup for Startups & SMEs</li>
+                        <li data-title="HR Policy & Employee Handbook Development" data-description="Custom HR policies and handbooks that align with Nigerian labor law and your company culture, ensuring clarity and consistency across your workforce.">HR Policy & Employee Handbook Development</li>
+                        <li data-title="HR Audits & Compliance Checks" data-description="We assess your current HR practices and identify gaps to ensure alignment with labor laws, tax obligations, and internal governance.">HR Audits & Compliance Checks</li>
+                        <li data-title="Organizational Restructuring & Change Management" data-description="Support during periods of transition—whether downsizing, scaling, or restructuring—to minimize disruption and maintain employee morale.">Organizational Restructuring & Change Management</li>
+                        <li data-title="HR Technology Advisory (HRIS/Payroll Systems)" data-description="Guidance on selecting and implementing the right HR software tools (HRIS, payroll systems, etc.) that improve efficiency and accuracy.">HR Technology Advisory (HRIS/Payroll Systems)</li>
                     </ul>
                 </div>
 
                 <div class="service-category">
                     <h3>Training & Development</h3>
                     <ul class="service-list">
-                        <li>Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
-                        <li>Leadership & Management Development Programs</li>
-                        <li>Workplace Etiquette & Customer Service Training</li>
-                        <li>Employee Onboarding & Induction Programs</li>
-                        <li>Train-the-Trainer Programs</li>
+                        <li data-title="Soft Skills Training" data-description="Enhance your team’s communication, teamwork, adaptability, and emotional intelligence to build a more collaborative workplace.">Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
+                        <li data-title="Leadership & Management Development Programs" data-description="Equip current and future leaders with practical tools for effective people and project management.">Leadership & Management Development Programs</li>
+                        <li data-title="Workplace Etiquette & Customer Service Training" data-description="Foster professionalism and improve customer experience through structured etiquette and service delivery workshops.">Workplace Etiquette & Customer Service Training</li>
+                        <li data-title="Employee Onboarding & Induction Programs" data-description="Ensure new hires integrate seamlessly with your company culture and operations through structured onboarding programs.">Employee Onboarding & Induction Programs</li>
+                        <li data-title="Train-the-Trainer Programs" data-description="Build internal training capacity by equipping selected employees with skills to train others effectively.">Train-the-Trainer Programs</li>
                     </ul>
                 </div>
 
                 <div class="service-category">
                     <h3>Performance & People Management</h3>
                     <ul class="service-list">
-                        <li>Performance Management System Setup & Reviews</li>
-                        <li>KPI Design & Implementation</li>
-                        <li>Employee Engagement & Satisfaction Surveys</li>
-                        <li>Career Pathing & Succession Planning</li>
-                        <li>Conflict Resolution & Disciplinary Advisory</li>
+                        <li data-title="Performance Management System Setup & Reviews" data-description="We help implement or revamp your appraisal systems to align employee goals with business objectives.">Performance Management System Setup & Reviews</li>
+                        <li data-title="KPI Design & Implementation" data-description="Custom Key Performance Indicators (KPIs) that reflect role-specific metrics and enable fair and measurable evaluation.">KPI Design & Implementation</li>
+                        <li data-title="Employee Engagement & Satisfaction Surveys" data-description="Gather honest employee feedback through surveys and use insights to improve morale, retention, and productivity.">Employee Engagement & Satisfaction Surveys</li>
+                        <li data-title="Career Pathing & Succession Planning" data-description="We work with you to map employee growth paths and identify high-potential talent for future leadership roles.">Career Pathing & Succession Planning</li>
+                        <li data-title="Conflict Resolution & Disciplinary Advisory" data-description="Professional guidance on resolving workplace conflicts and managing disciplinary procedures in line with best practice and local law.">Conflict Resolution & Disciplinary Advisory</li>
                     </ul>
                 </div>
 
                 <div class="service-category">
                     <h3>Payroll & Outsourcing Services</h3>
                     <ul class="service-list">
-                        <li>Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
-                        <li>Employee Benefits Administration</li>
-                        <li>Full HR Outsourcing (You manage HR while clients focus on core business)</li>
-                        <li>Staff Verification & Background Checks</li>
+                        <li data-title="Payroll Processing & Compliance" data-description="We handle end-to-end payroll processing and ensure compliance with all statutory obligations—accurately and on time.">Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
+                        <li data-title="Employee Benefits Administration" data-description="Management of health insurance, pensions, leave, and other benefits to keep your workforce satisfied and compliant.">Employee Benefits Administration</li>
+                        <li data-title="Full HR Outsourcing" data-description="Focus on your core business while we manage HR operations, from recruitment and onboarding to employee management and offboarding.">Full HR Outsourcing (You manage HR while clients focus on core business)</li>
+                        <li data-title="Staff Verification & Background Checks" data-description="Thorough checks to confirm the credibility of your hires—covering employment history, criminal records, guarantor verification, and more.">Staff Verification & Background Checks</li>
                     </ul>
                 </div>
 
                 <div class="service-category">
                     <h3>Business Support Services</h3>
                     <ul class="service-list">
-                        <li>Job Description Development & Review</li>
-                        <li>Organizational Structure & Chart Design</li>
-                        <li>HR Data Analytics & Reporting</li>
-                        <li>Virtual HR Services for Remote Companies</li>
-                        <li>Support with Labour Law Compliance & Dispute Resolution</li>
+                        <li data-title="Job Description Development & Review" data-description="Clear and compliant job descriptions tailored to reflect actual roles, aiding in recruitment, performance review, and legal clarity.">Job Description Development & Review</li>
+                        <li data-title="Organizational Structure & Chart Design" data-description="We design lean and scalable organizational structures that support business growth and clear reporting lines.">Organizational Structure & Chart Design</li>
+                        <li data-title="HR Data Analytics & Reporting" data-description="Leverage data to make informed HR decisions with analytics on turnover, performance, absenteeism, and more.">HR Data Analytics & Reporting</li>
+                        <li data-title="Virtual HR Services for Remote Companies" data-description="We provide outsourced HR services to virtual/remote teams—covering recruitment, onboarding, and employee support.">Virtual HR Services for Remote Companies</li>
+                        <li data-title="Support with Labour Law Compliance & Dispute Resolution" data-description="Ensure alignment with labor laws and receive expert guidance on managing internal disputes and external claims.">Support with Labour Law Compliance & Dispute Resolution</li>
                     </ul>
                 </div>
             </div>
@@ -464,19 +562,45 @@
                     <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
                 </div>
                 <ul class="signature-services-list">
-                    <li>
+                    <li data-title="RecruitReady" data-description="One-on-one coaching to help job seekers craft compelling CVs, prepare for interviews, and position themselves confidently in the job market.">
                         <h4>“RecruitReady”</h4>
                         <p>CV & Interview Preparation Coaching for Job Seekers</p>
                     </li>
-                    <li>
+                    <li data-title="ConnectPro" data-description="Affordable monthly HR support plans tailored for startups and SMEs needing consistent HR support without a full-time team.">
                         <h4>“ConnectPro”</h4>
                         <p>Business HR subscription packages for small businesses</p>
                     </li>
-                    <li>
+                    <li data-title="HireFast" data-description="Rapid hiring service designed to fill urgent roles within 48 hours—without sacrificing quality or process integrity.">
                         <h4>“HireFast”</h4>
                         <p>48-hour recruitment turnaround for urgent roles</p>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you. Reach out to us through any of our channels below.</p>
+                </div>
+                <div class="contact-info">
+                    <!-- Phone Numbers -->
+                    <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
+                    <!-- Email -->
+                    <p><a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</a></p>
+                    <!-- WhatsApp -->
+                    <p><a href="https://wa.me/2349025427977" target="_blank"><i class="fab fa-whatsapp"></i> 09025427977</a></p>
+                    <div class="social-links">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/Recruit_Connect01" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@RecruitConnectc01" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/recruitconnect-nig-ltd" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -486,11 +610,55 @@
             <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- The Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
     
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu Toggle and Modal -->
     <script>
         document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
             document.querySelector('.navbar-links').classList.toggle('active');
+        });
+
+        // Get the modal
+        const modal = document.getElementById('service-modal');
+
+        // Get the <span> element that closes the modal
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Function to open the modal with specific content
+        function openModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            modal.style.display = 'flex';
+        }
+
+        // Add event listeners to all service list items
+        const serviceItems = document.querySelectorAll('.service-list li, .signature-services-list li');
+        serviceItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description');
+                openModal(title, description);
+            });
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
