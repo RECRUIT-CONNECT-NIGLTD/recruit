@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ayoprudent.github.io/AyoPrudentNigeriaLimited/sitemap.xml
+Sitemap: https://https://recruit-connect-nigltd.github.io/recruit/sitemap.xml
+
