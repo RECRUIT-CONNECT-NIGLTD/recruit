@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ayoprudent.github.io/AyoPrudentNigeriaLimited/sitemap.xml
