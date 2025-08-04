@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruitconnect | HR & Recruitment Solutions</title>
-<meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
+    <meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
     <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
     
+    <!-- Google Fonts: Poppins for headings, Lato for body -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* --- General Styling & Color Palette --- */
         :root {
@@ -27,6 +32,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -69,6 +75,54 @@
             margin: 0 auto;
         }
 
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .navbar-logo img {
+            height: 40px; /* Adjust logo height */
+            margin-right: 10px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 25px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: var(--secondary-gold);
+        }
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        
         /* --- Hero Section --- */
         .hero-section {
             background-color: var(--primary-blue);
@@ -83,6 +137,7 @@
             background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
+            padding-top: 200px; /* Adjust padding to account for fixed navbar */
         }
         
         .hero-overlay {
@@ -97,6 +152,11 @@
         .hero-content {
             position: relative;
             z-index: 10;
+        }
+        
+        .hero-logo {
+            height: 150px; /* Adjust size of the large logo */
+            margin-bottom: 25px;
         }
 
         .hero-content h1 {
@@ -259,122 +319,179 @@
             .section-header h2 {
                 font-size: 2rem;
             }
+            
+            /* Mobile Navigation */
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on navbar height */
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 10px 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 10px 0;
+                border-bottom: 1px solid var(--light-gray-bg);
+            }
+            .navbar-toggle {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--primary-blue);
+            }
         }
     </style>
 </head>
 <body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <!-- Company logo added here -->
+                <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">
+                Recruitconnect
+            </a>
+            <div class="navbar-links">
+                <a href="#services">Services</a>
+                <a href="#signature-services">Signature Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="navbar-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Header Section (Now just the hero content) -->
     <header class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
+            <!-- Hero section large logo -->
+            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo" class="hero-logo">
             <h1>Recruitconnect: Your Partner in People Management</h1>
             <p>From talent acquisition to strategic HR consulting, we provide tailored solutions that drive business growth and build high-performing teams.</p>
             <a href="#services" class="btn btn-primary">Discover Our Services</a>
         </div>
     </header>
 
-    <main class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Comprehensive Solutions</h2>
-                <p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business, from startups to large corporations.</p>
-            </div>
+    <main>
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Comprehensive Solutions</h2>
+                    <p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business, from startups to large corporations.</p>
+                </div>
 
-            <div class="service-category">
-                <h3>Recruitment & Talent Acquisition</h3>
-                <ul class="service-list">
-                    <li>Executive Search & Headhunting</li>
-                    <li>Mass Recruitment for SMEs and Corporates</li>
-                    <li>Temporary & Contract Staffing Solutions</li>
-                    <li>Outsourced Recruitment Services (RPO)</li>
-                    <li>Internship & Graduate Trainee Placement Programs</li>
+                <div class="service-category">
+                    <h3>Recruitment & Talent Acquisition</h3>
+                    <ul class="service-list">
+                        <li>Executive Search & Headhunting</li>
+                        <li>Mass Recruitment for SMEs and Corporates</li>
+                        <li>Temporary & Contract Staffing Solutions</li>
+                        <li>Outsourced Recruitment Services (RPO)</li>
+                        <li>Internship & Graduate Trainee Placement Programs</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>HR Consulting & Advisory</h3>
+                    <ul class="service-list">
+                        <li>HR Department Setup for Startups & SMEs</li>
+                        <li>HR Policy & Employee Handbook Development</li>
+                        <li>HR Audits & Compliance Checks</li>
+                        <li>Organizational Restructuring & Change Management</li>
+                        <li>HR Technology Advisory (HRIS/Payroll Systems)</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Training & Development</h3>
+                    <ul class="service-list">
+                        <li>Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
+                        <li>Leadership & Management Development Programs</li>
+                        <li>Workplace Etiquette & Customer Service Training</li>
+                        <li>Employee Onboarding & Induction Programs</li>
+                        <li>Train-the-Trainer Programs</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Performance & People Management</h3>
+                    <ul class="service-list">
+                        <li>Performance Management System Setup & Reviews</li>
+                        <li>KPI Design & Implementation</li>
+                        <li>Employee Engagement & Satisfaction Surveys</li>
+                        <li>Career Pathing & Succession Planning</li>
+                        <li>Conflict Resolution & Disciplinary Advisory</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Payroll & Outsourcing Services</h3>
+                    <ul class="service-list">
+                        <li>Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
+                        <li>Employee Benefits Administration</li>
+                        <li>Full HR Outsourcing (You manage HR while clients focus on core business)</li>
+                        <li>Staff Verification & Background Checks</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Business Support Services</h3>
+                    <ul class="service-list">
+                        <li>Job Description Development & Review</li>
+                        <li>Organizational Structure & Chart Design</li>
+                        <li>HR Data Analytics & Reporting</li>
+                        <li>Virtual HR Services for Remote Companies</li>
+                        <li>Support with Labour Law Compliance & Dispute Resolution</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Signature Services Section -->
+        <section class="signature-services-section" id="signature-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recruitconnect Signature Services</h2>
+                    <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
+                </div>
+                <ul class="signature-services-list">
+                    <li>
+                        <h4>“RecruitReady”</h4>
+                        <p>CV & Interview Preparation Coaching for Job Seekers</p>
+                    </li>
+                    <li>
+                        <h4>“ConnectPro”</h4>
+                        <p>Business HR subscription packages for small businesses</p>
+                    </li>
+                    <li>
+                        <h4>“HireFast”</h4>
+                        <p>48-hour recruitment turnaround for urgent roles</p>
+                    </li>
                 </ul>
             </div>
-
-            <div class="service-category">
-                <h3>HR Consulting & Advisory</h3>
-                <ul class="service-list">
-                    <li>HR Department Setup for Startups & SMEs</li>
-                    <li>HR Policy & Employee Handbook Development</li>
-                    <li>HR Audits & Compliance Checks</li>
-                    <li>Organizational Restructuring & Change Management</li>
-                    <li>HR Technology Advisory (HRIS/Payroll Systems)</li>
-                </ul>
-            </div>
-
-            <div class="service-category">
-                <h3>Training & Development</h3>
-                <ul class="service-list">
-                    <li>Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
-                    <li>Leadership & Management Development Programs</li>
-                    <li>Workplace Etiquette & Customer Service Training</li>
-                    <li>Employee Onboarding & Induction Programs</li>
-                    <li>Train-the-Trainer Programs</li>
-                </ul>
-            </div>
-
-            <div class="service-category">
-                <h3>Performance & People Management</h3>
-                <ul class="service-list">
-                    <li>Performance Management System Setup & Reviews</li>
-                    <li>KPI Design & Implementation</li>
-                    <li>Employee Engagement & Satisfaction Surveys</li>
-                    <li>Career Pathing & Succession Planning</li>
-                    <li>Conflict Resolution & Disciplinary Advisory</li>
-                </ul>
-            </div>
-
-            <div class="service-category">
-                <h3>Payroll & Outsourcing Services</h3>
-                <ul class="service-list">
-                    <li>Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
-                    <li>Employee Benefits Administration</li>
-                    <li>Full HR Outsourcing (You manage HR while clients focus on core business)</li>
-                    <li>Staff Verification & Background Checks</li>
-                </ul>
-            </div>
-
-            <div class="service-category">
-                <h3>Business Support Services</h3>
-                <ul class="service-list">
-                    <li>Job Description Development & Review</li>
-                    <li>Organizational Structure & Chart Design</li>
-                    <li>HR Data Analytics & Reporting</li>
-                    <li>Virtual HR Services for Remote Companies</li>
-                    <li>Support with Labour Law Compliance & Dispute Resolution</li>
-                </ul>
-            </div>
-        </div>
+        </section>
     </main>
-    
-    <section class="signature-services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Recruitconnect Signature Services</h2>
-                <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
-            </div>
-            <ul class="signature-services-list">
-                <li>
-                    <h4>“RecruitReady”</h4>
-                    <p>CV & Interview Preparation Coaching for Job Seekers</p>
-                </li>
-                <li>
-                    <h4>“ConnectPro”</h4>
-                    <p>Business HR subscription packages for small businesses</p>
-                </li>
-                <li>
-                    <h4>“HireFast”</h4>
-                    <p>48-hour recruitment turnaround for urgent roles</p>
-                </li>
-            </ul>
-        </div>
-    </section>
 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
         </div>
     </footer>
-
+    
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
