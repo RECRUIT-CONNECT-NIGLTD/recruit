@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitconnect | HR & Recruitment Solutions</title>
+    <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Color Palette --- */
+        :root {
+            --primary-blue: #0A2342; /* Dark, professional blue */
+            --secondary-gold: #FFB703; /* A warm, engaging gold */
+            --light-gray-bg: #F4F7F9; /* Subtle light gray for sections */
+            --dark-text: #333333;
+            --mid-text: #666666;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-gold);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-overlay {
+            background-color: rgba(10, 35, 66, 0.85);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- Services Grid Section --- */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--light-gray-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-category h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-list li {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            padding-left: 45px;
+            font-weight: 600;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: var(--secondary-gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .service-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Signature Services Section --- */
+        .signature-services-section {
+            padding: 80px 0;
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .signature-services-section h2 {
+            color: var(--white);
+        }
+
+        .signature-services-section .section-header h2::after {
+            background-color: var(--secondary-gold);
+        }
+
+        .signature-services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .signature-services-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .signature-services-list li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .signature-services-list h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-gold);
+        }
+        
+        .signature-services-list p {
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #1a1a1a;
+            color: var(--mid-text);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1>Recruitconnect: Your Partner in People Management</h1>
+            <p>From talent acquisition to strategic HR consulting, we provide tailored solutions that drive business growth and build high-performing teams.</p>
+            <a href="#services" class="btn btn-primary">Discover Our Services</a>
+        </div>
+    </header>
+
+    <main class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Comprehensive Solutions</h2>
+                <p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business, from startups to large corporations.</p>
+            </div>
+
+            <div class="service-category">
+                <h3>Recruitment & Talent Acquisition</h3>
+                <ul class="service-list">
+                    <li>Executive Search & Headhunting</li>
+                    <li>Mass Recruitment for SMEs and Corporates</li>
+                    <li>Temporary & Contract Staffing Solutions</li>
+                    <li>Outsourced Recruitment Services (RPO)</li>
+                    <li>Internship & Graduate Trainee Placement Programs</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3>HR Consulting & Advisory</h3>
+                <ul class="service-list">
+                    <li>HR Department Setup for Startups & SMEs</li>
+                    <li>HR Policy & Employee Handbook Development</li>
+                    <li>HR Audits & Compliance Checks</li>
+                    <li>Organizational Restructuring & Change Management</li>
+                    <li>HR Technology Advisory (HRIS/Payroll Systems)</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3>Training & Development</h3>
+                <ul class="service-list">
+                    <li>Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
+                    <li>Leadership & Management Development Programs</li>
+                    <li>Workplace Etiquette & Customer Service Training</li>
+                    <li>Employee Onboarding & Induction Programs</li>
+                    <li>Train-the-Trainer Programs</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3>Performance & People Management</h3>
+                <ul class="service-list">
+                    <li>Performance Management System Setup & Reviews</li>
+                    <li>KPI Design & Implementation</li>
+                    <li>Employee Engagement & Satisfaction Surveys</li>
+                    <li>Career Pathing & Succession Planning</li>
+                    <li>Conflict Resolution & Disciplinary Advisory</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3>Payroll & Outsourcing Services</h3>
+                <ul class="service-list">
+                    <li>Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
+                    <li>Employee Benefits Administration</li>
+                    <li>Full HR Outsourcing (You manage HR while clients focus on core business)</li>
+                    <li>Staff Verification & Background Checks</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3>Business Support Services</h3>
+                <ul class="service-list">
+                    <li>Job Description Development & Review</li>
+                    <li>Organizational Structure & Chart Design</li>
+                    <li>HR Data Analytics & Reporting</li>
+                    <li>Virtual HR Services for Remote Companies</li>
+                    <li>Support with Labour Law Compliance & Dispute Resolution</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <section class="signature-services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recruitconnect Signature Services</h2>
+                <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
+            </div>
+            <ul class="signature-services-list">
+                <li>
+                    <h4>“RecruitReady”</h4>
+                    <p>CV & Interview Preparation Coaching for Job Seekers</p>
+                </li>
+                <li>
+                    <h4>“ConnectPro”</h4>
+                    <p>Business HR subscription packages for small businesses</p>
+                </li>
+                <li>
+                    <h4>“HireFast”</h4>
+                    <p>48-hour recruitment turnaround for urgent roles</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
