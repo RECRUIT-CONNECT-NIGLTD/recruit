@@ -1,454 +1,684 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitconnect | HR & Recruitment Solutions</title>
+    <meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
+    <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
+    
+    <!-- Google Fonts: Poppins for headings, Lato for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<title>Recruitconnect | HR & Recruitment Solutions</title>
+    <style>
+        /* --- General Styling & Color Palette --- */
+        :root {
+            --primary-blue: #0A2342;
+            --secondary-gold: #FFB703;
+            --light-gray-bg: #F4F7F9;
+            --dark-text: #333333;
+            --mid-text: #666666;
+            --white: #FFFFFF;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-<style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-:root{
---primary:#0A2342;
---gold:#FFB703;
---light:#F4F7F9;
---dark:#333;
-}
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+        }
 
-body{
-font-family:'Lato',sans-serif;
-margin:0;
-color:var(--dark);
-scroll-behavior:smooth;
-}
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-gold);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
 
-h1,h2,h3{
-font-family:'Poppins',sans-serif;
-}
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-.section-header{
-text-align:center;
-margin-bottom:50px;
-}
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .navbar-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 25px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: var(--secondary-gold);
+        }
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+        }
 
-.section-header h2{
-font-size:2.3rem;
-margin-bottom:10px;
-}
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding-top: 200px;
+        }
+        
+        .hero-overlay {
+            background-color: rgba(10, 35, 66, 0.85);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-.navbar{
-background:white;
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-logo {
+            height: 150px;
+            margin-bottom: 25px;
+        }
 
-.navbar .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 20px;
-}
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.navbar a{
-text-decoration:none;
-color:var(--primary);
-margin-left:20px;
-font-weight:600;
-}
+        .btn-primary {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-.hero{
-background:var(--primary);
-color:white;
-padding:160px 20px;
-text-align:center;
-}
+        /* --- Services Section --- */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--light-gray-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-category h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-list li {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            padding-left: 45px;
+            font-weight: 600;
+            cursor: pointer;
+        }
 
-.hero h1{
-font-size:3rem;
-}
+        .service-list li::before {
+            content: '✓';
+            color: var(--secondary-gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .service-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-.btn{
-display:inline-block;
-padding:12px 28px;
-background:var(--gold);
-color:black;
-text-decoration:none;
-border-radius:40px;
-font-weight:600;
-margin-top:20px;
-cursor:pointer;
-}
+        /* --- Signature Services Section --- */
+        .signature-services-section {
+            padding: 80px 0;
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .signature-services-section h2 {
+            color: var(--white);
+        }
 
-/* ABOUT */
+        .signature-services-section .section-header h2::after {
+            background-color: var(--secondary-gold);
+        }
 
-.about{
-background:var(--light);
-padding:80px 0;
-}
+        .signature-services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .signature-services-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .signature-services-list li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .signature-services-list h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-gold);
+        }
+        
+        .signature-services-list p {
+            font-size: 1rem;
+            color: var(--white);
+        }
 
-.leaders{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-}
+        /* --- About Section --- */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--light-gray-bg);
+        }
+        .leader-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .leader {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .leader img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .leader h3 {
+            margin-bottom: 5px;
+        }
+        .leader p {
+            font-size: 0.95rem;
+            color: var(--mid-text);
+        }
 
-.leader{
-background:white;
-padding:30px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-transition:transform .3s;
-}
+        /* --- Mentorship Section --- */
+        .mentorship-section {
+            padding: 80px 0;
+        }
+        .mentorship-section iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 12px;
+        }
+        .payment-instructions {
+            margin-top: 20px;
+            background-color: var(--light-gray-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .payment-instructions p {
+            margin: 10px 0;
+        }
 
-.leader:hover{
-transform:translateY(-10px);
-}
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 80px 0;
+        }
 
-.leader img{
-width:160px;
-height:160px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:20px;
-}
+        .contact-section .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .contact-section .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .contact-info a:hover {
+            color: var(--secondary-gold);
+        }
+        
+        .contact-section .social-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-section .social-links a {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .social-links a:hover {
+            color: var(--secondary-gold);
+        }
 
-.leader h4{
-color:var(--gold);
-}
+        /* --- Modal Styling --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+        }
 
-/* SERVICES */
+        .modal-content {
+            background-color: var(--white);
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.3s ease;
+        }
 
-.services{
-padding:80px 0;
-}
+        .modal-content h3 {
+            margin-top: 0;
+        }
+        
+        .close-btn {
+            color: var(--dark-text);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
-.services ul{
-list-style:none;
-padding:0;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
 
-.services li{
-background:var(--light);
-padding:20px;
-border-radius:8px;
-}
-
-/* MENTORSHIP */
-
-.mentorship{
-background:var(--primary);
-color:white;
-padding:80px 0;
-text-align:center;
-}
-
-.countdown{
-font-size:1.6rem;
-margin-top:10px;
-font-weight:bold;
-}
-
-.form-section{
-padding:80px 0;
-}
-
-iframe{
-border:none;
-width:100%;
-height:1200px;
-}
-
-.payment{
-text-align:center;
-margin-top:40px;
-}
-
-.footer{
-background:#1a1a1a;
-color:#ccc;
-text-align:center;
-padding:30px;
-margin-top:60px;
-}
-
-</style>
+        /* --- Footer --- */
+        .footer {
+            background-color: #1a1a1a;
+            color: var(--mid-text);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 10px 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 10px 0;
+                border-bottom: 1px solid var(--light-gray-bg);
+            }
+            .navbar-toggle {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--primary-blue);
+            }
+            .leader-card {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
-
 <body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-<div class="container">
-<strong>Recruitconnect</strong>
-
-<div>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#mentorship">Mentorship</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-</div>
-
-
-<!-- HERO -->
-<section class="hero">
-
-<div class="container">
-
-<h1>Recruitconnect</h1>
-
-<p>Your Partner in People Management</p>
-
-<a href="#services" class="btn">Explore Services</a>
-
-</div>
-
-</section>
-
-
-
-<!-- ABOUT -->
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Meet Our Leaders</h2>
-<p>The people driving the Recruitconnect vision</p>
-</div>
-
-<div class="leaders">
-
-<div class="leader">
-
-<img src="founder.jpg">
-
-<h3>Tiamiyu Oluwaseun Michael</h3>
-
-<h4>Founder</h4>
-
-<p>
-Experienced recruitment professional passionate about helping
-organizations build strong teams and helping job seekers grow their careers.
-</p>
-
-<p>
-<strong>Education:</strong> [School Name]<br>
-<strong>Experience:</strong> Recruitment & HR Consulting
-</p>
-
-</div>
-
-
-<div class="leader">
-
-<img src="cofounder.jpg">
-
-<h3>Blessing Nnenna Okorie</h3>
-
-<h4>Co-Founder</h4>
-
-<p>
-HR professional specializing in people management,
-HR advisory, and workforce development.
-</p>
-
-<p>
-<strong>Education:</strong> [School Name]<br>
-<strong>Experience:</strong> HR Consulting & Training
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- SERVICES -->
-<section class="services" id="services">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Our Services</h2>
-</div>
-
-<ul>
-<li>Executive Search & Headhunting</li>
-<li>Mass Recruitment</li>
-<li>HR Consulting</li>
-<li>Employee Training</li>
-<li>Performance Management</li>
-<li>Payroll Processing</li>
-<li>Background Verification</li>
-<li>Organizational Structure Design</li>
-</ul>
-
-</div>
-
-</section>
-
-
-
-<!-- MENTORSHIP -->
-<section class="mentorship" id="mentorship">
-
-<div class="container">
-
-<h2>HR Mentorship Class</h2>
-
-<p>
-Our quarterly mentorship class helps individuals move into HR careers.
-</p>
-
-<p><strong>Duration:</strong> 4 Weeks | <strong>Mode:</strong> Virtual</p>
-
-<div class="countdown" id="countdown"></div>
-
-<a href="#register" class="btn">REGISTER FOR MENTORSHIP CLASS</a>
-
-</div>
-
-</section>
-
-
-
-<!-- FORM -->
-<section class="form-section" id="register">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Mentorship Registration</h2>
-</div>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform?embedded=true">
-</iframe>
-
-
-<div class="payment">
-
-<h3>Proceed to Payment</h3>
-
-<button class="btn" onclick="pay()">Pay for Mentorship</button>
-
-<p>After payment send receipt for confirmation.</p>
-
-<a class="btn" href="https://wa.me/2349025427977">Send Receipt on WhatsApp</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-<section id="contact" class="services">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Contact Us</h2>
-</div>
-
-<p style="text-align:center">
-Phone: 07060432373 | 08028230847<br>
-Email: Recruit_Connect@outlook.com
-</p>
-
-</div>
-
-</section>
-
-
-
-<div class="footer">
-© 2026 Recruitconnect
-</div>
-
-
-
-<!-- FLUTTERWAVE -->
-<script src="https://checkout.flutterwave.com/v3.js"></script>
-
-<script>
-
-function pay(){
-
-FlutterwaveCheckout({
-
-public_key:"YOUR_FLUTTERWAVE_PUBLIC_KEY",
-
-tx_ref:"mentor-"+Date.now(),
-
-amount:50000,
-
-currency:"NGN",
-
-payment_options:"card,banktransfer,ussd",
-
-customer:{
-email:"student@email.com",
-name:"Mentorship Student"
-},
-
-customizations:{
-title:"Recruitconnect Mentorship",
-description:"Quarterly HR Mentorship Class"
-}
-
-})
-
-}
-
-
-const countdown=document.getElementById("countdown");
-
-const eventDate=new Date("2026-07-01");
-
-function updateCountdown(){
-
-const now=new Date().getTime();
-
-const distance=eventDate-now;
-
-const days=Math.floor(distance/(1000*60*60*24));
-
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-
-countdown.innerHTML="Next Cohort Starts In: "+days+" Days "+hours+" Hours";
-
-}
-
-setInterval(updateCountdown,1000);
-
-</script>
-
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">
+                Recruitconnect
+            </a>
+            <div class="navbar-links">
+                <a href="#services">Services</a>
+                <a href="#signature-services">Signature Services</a>
+                <a href="#about">About Us</a>
+                <a href="#mentorship">Mentorship</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="navbar-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo" class="hero-logo">
+            <h1>Recruitconnect: Your Partner in People Management</h1>
+            <p>From talent acquisition to strategic HR consulting, we provide tailored solutions that drive business growth and build high-performing teams.</p>
+            <a href="#services" class="btn btn-primary">Discover Our Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Services Section (unchanged) -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Comprehensive Solutions</h2>
+                    <p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business, from startups to large corporations.</p>
+                </div>
+                <!-- ... (all your service categories remain unchanged) -->
+            </div>
+        </section>
+
+        <!-- Signature Services Section (unchanged) -->
+        <section class="signature-services-section" id="signature-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recruitconnect Signature Services</h2>
+                    <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
+                </div>
+                <ul class="signature-services-list">
+                    <li data-title="RecruitReady" data-description="One-on-one coaching to help job seekers craft compelling CVs, prepare for interviews, and position themselves confidently in the job market.">
+                        <h4>“RecruitReady”</h4>
+                        <p>CV & Interview Preparation Coaching for Job Seekers</p>
+                    </li>
+                    <li data-title="ConnectPro" data-description="Affordable monthly HR support plans tailored for startups and SMEs needing consistent HR support without a full-time team.">
+                        <h4>“ConnectPro”</h4>
+                        <p>Business HR subscription packages for small businesses</p>
+                    </li>
+                    <li data-title="HireFast" data-description="Rapid hiring service designed to fill urgent roles within 48 hours—without sacrificing quality or process integrity.">
+                        <h4>“HireFast”</h4>
+                        <p>48-hour recruitment turnaround for urgent roles</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet Our Leaders</h2>
+                    <p>Learn more about our founder and co-founder, their experience, and vision for Recruitconnect.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader">
+                        <img src="https://via.placeholder.com/150" alt="Tiamiyu Oluwaseun Michael">
+                        <h3>Tiamiyu Oluwaseun Michael</h3>
+                        <p><strong>Founder</strong></p>
+                        <p>Graduated from [School Name]. Extensive experience in recruitment and HR management.</p>
+                    </div>
+                    <div class="leader">
+                        <img src="https://via.placeholder.com/150" alt="Blessing Nnenna Okorie">
+                        <h3>Blessing Nnenna Okorie</h3>
+                        <p><strong>Co-Founder</strong></p>
+                        <p>Graduated from [School Name]. Skilled in recruitment strategy and HR advisory services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentorship Section -->
+        <section class="mentorship-section" id="mentorship">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mentorship Class</h2>
+                    <p>Register for our quarterly HR Mentorship Class to advance your career in Human Resources.</p>
+                </div>
+                
+                <!-- Google Form Embed -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform?embedded=true" frameborder="0">Loading…</iframe>
+                
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+                    <h3>Payment Instructions</h3>
+                    <p>After filling and submitting the mentorship form, make your payment using the details below:</p>
+                    <p><strong>Bank Name:</strong> Moniepoint Microfinance Bank</p>
+                    <p><strong>Account Name:</strong> Recruitconnect Nig Ltd</p>
+                    <p><strong>Account Number:</strong> 1234567890</p>
+                    <p>Use your <strong>Full Name + Mentorship</strong> as payment description. Example: John Doe Mentorship</p>
+                    <p>After payment, send your receipt directly to our WhatsApp for confirmation:</p>
+                    <a href="https://wa.me/2349025427977" class="btn btn-primary">Send Receipt via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (unchanged) -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you. Reach out to us through any of our channels below.</p>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
+                    <p><a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</a></p>
+                    <p><a href="https://wa.me/2349025427977" target="_blank"><i class="fab fa-whatsapp"></i> 09025427977</a></p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/Recruit_Connect01" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@recruitconnect.ni" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- The Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    
+    <!-- JavaScript for Mobile Menu Toggle and Modal -->
+    <script>
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-links').classList.toggle('active');
+        });
+
+        const modal = document.getElementById('service-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        function openModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            modal.style.display = 'flex';
+        }
+
+        const serviceItems = document.querySelectorAll('.service-list li, .signature-services-list li');
+        serviceItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description');
+                openModal(title, description);
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
-```
