@@ -66,26 +66,21 @@
         .btn-primary { background: var(--secondary-gold); color: var(--primary-blue); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-        /* --- Sections --- */
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.3rem; position: relative; padding-bottom: 15px; }
-        .section-header h2::after { content: ''; width: 60px; height: 4px; background: var(--secondary-gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        /* --- Leaders --- */
+        /* --- Leaders Section --- */
         .leaders-section { padding: 80px 0; background: var(--white); }
         .leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
-        .leader-card { background: var(--light-gray-bg); padding: 40px; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--secondary-gold); }
-        .leader-img img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 5px solid var(--white); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .leader-role { color: var(--secondary-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .leader-card { background: var(--light-gray-bg); padding: 40px; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--secondary-gold); display: flex; flex-direction: column; align-items: center; }
+        .leader-img img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--white); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .leader-role { color: var(--secondary-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 1px; }
         .leader-bio { text-align: justify; font-size: 0.95rem; color: var(--mid-text); }
 
-        /* --- Mentorship --- */
+        /* --- Mentorship Section --- */
         .mentorship-section { 
             padding: 100px 0; 
-            background: linear-gradient(rgba(10, 35, 66, 0.9), rgba(10, 35, 66, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(10, 35, 66, 0.92), rgba(10, 35, 66, 0.92)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; color: white; text-align: center;
         }
-        .mentorship-content h2 { color: white; margin-bottom: 20px; }
+        .mentorship-content h2 { color: white; margin-bottom: 20px; font-size: 2.5rem; }
         .mentorship-badge { background: var(--secondary-gold); color: var(--primary-blue); padding: 5px 15px; border-radius: 5px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
 
         /* --- Services --- */
@@ -97,14 +92,12 @@
 
         /* --- Modals --- */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
-        .modal-content { background: var(--white); padding: 40px; border-radius: 15px; max-width: 550px; width: 90%; position: relative; animation: slideUp 0.4s ease; }
+        .modal-content { background: var(--white); padding: 40px; border-radius: 15px; max-width: 500px; width: 90%; position: relative; animation: slideUp 0.4s ease; }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--mid-text); }
         
-        /* --- Forms & Payment --- */
         .form-input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
         .payment-box { background: #f8f9fa; border: 2px dashed var(--primary-blue); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left; }
-        .payment-box p { margin: 5px 0; font-size: 0.95rem; }
 
         .footer { background: #111; color: #888; padding: 40px 0; text-align: center; }
 
@@ -123,8 +116,8 @@
                 Recruitconnect
             </a>
             <div class="navbar-links">
-                <a href="#services">Services</a>
                 <a href="#about">About</a>
+                <a href="#services">Services</a>
                 <a href="#mentorship">Mentorship</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -134,17 +127,18 @@
     <header class="hero-section">
         <div class="container hero-content">
             <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" class="hero-logo" alt="Recruitconnect">
-            <h1>Your Partner in People Management</h1>
-            <p>From strategic talent acquisition to data-driven HR consulting, we help organizations build high-performing teams.</p>
-            <a href="#services" class="btn btn-primary">Our Solutions</a>
+            <h1>Building High-Performing Teams</h1>
+            <p>From strategic recruitment to data-driven HR solutions, we connect organizations with the talent they need to thrive.</p>
+            <a href="#mentorship" class="btn btn-primary">Join Mentorship Class</a>
         </div>
     </header>
 
     <main>
         <section class="leaders-section" id="about">
             <div class="container">
-                <div class="section-header">
-                    <h2>Meet Our Leaders</h2>
+                <div style="text-align:center; margin-bottom: 50px;">
+                    <h2 style="font-size: 2.5rem;">Meet Our Leaders</h2>
+                    <p>The visionaries shaping the future of recruitment and people operations.</p>
                 </div>
                 <div class="leaders-grid">
                     <div class="leader-card">
@@ -155,21 +149,22 @@
                             <h3>Tiamiyu Oluwaseun Michael</h3>
                             <span class="leader-role">Founder & Principal Talent Consultant</span>
                             <div class="leader-bio">
-                                <p>Oluwaseun is a Human Resources professional with deep expertise across the talent acquisition lifecycle. He specializes in building recruitment frameworks that enable startups and SMEs to scale through the right talent.</p>
-                                <p>With a career managing core people-operations, performance appraisals, and HR policy administration, he founded Recruitconnect to create efficient, high-quality talent pipelines for growing organizations.</p>
+                                <p>Tiamiyu Oluwaseun Michael is a Human Resources professional and the Founder of Recruitconnect Nig Ltd. He specializes in building efficient recruitment frameworks that enable organizations to attract and retain high-performing professionals.</p>
+                                <p>With expertise across the full talent acquisition lifecycle—including workforce planning, competency-based interviewing, and onboarding systems—Oluwaseun has a proven track record of aligning talent strategy with organizational objectives for startups and SMEs alike.</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="leader-card">
                         <div class="leader-img">
-                            <img src="https://via.placeholder.com/160" alt="Michael - Co-Founder">
+                            <img src="https://via.placeholder.com/180" alt="Blessing Nnenna Okorie">
                         </div>
                         <div class="leader-info">
-                            <h3>Michael [Last Name]</h3>
-                            <span class="leader-role">Co-Founder & Data Strategy Lead</span>
+                            <h3>Blessing Nnenna Okorie</h3>
+                            <span class="leader-role">Co-Founder & Lead Data Analyst</span>
                             <div class="leader-bio">
-                                <p>Michael bridges the gap between HR and Technology. Specializing in <strong>Data Analysis and SQL</strong>, he ensures that Recruitconnect’s processes are backed by measurable insights and workforce analytics.</p>
-                                <p>He leads the technical modules of our mentorship programs, empowering the next generation of HR leaders with data skills to drive business outcomes.</p>
+                                <p>Blessing Nnenna Okorie is the Co-Founder and technical lead at Recruitconnect. A specialist in <strong>Data Analysis and SQL</strong>, she brings a data-driven approach to human resources and recruitment strategy.</p>
+                                <p>Blessing oversees the integration of workforce analytics into our consulting services, ensuring that hiring decisions are backed by measurable insights. She leads our technical mentorship modules, teaching professionals how to use data to optimize HR performance and business growth.</p>
                             </div>
                         </div>
                     </div>
@@ -179,83 +174,79 @@
 
         <section class="mentorship-section" id="mentorship">
             <div class="container">
-                <div class="mentorship-badge">ENROLLING NOW</div>
-                <h2>HR & Recruitment Mentorship Class</h2>
-                <p>A quarterly intensive program for aspiring HR professionals. Master Talent Acquisition, Labor Law, and <strong>Data Analysis with SQL</strong>.</p>
-                <button class="btn btn-primary" onclick="openMentorshipModal()">Register for Mentorship Class</button>
+                <div class="mentorship-badge">BATCH ENROLLMENT OPEN</div>
+                <h2>HR & Recruitment Mentorship</h2>
+                <p>Join our intensive quarterly program. Master Talent Acquisition, Labor Law compliance, and <strong>Data Analysis using SQL</strong> to advance your HR career.</p>
+                <button class="btn btn-primary" onclick="openMentorshipModal()">Register & Pay Now</button>
             </div>
         </section>
 
         <section class="services-section" id="services">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Services</h2>
+                <div style="text-align:center; margin-bottom: 40px;">
+                    <h2>Our Core Expertise</h2>
                 </div>
-                <div class="service-category">
-                    <ul class="service-list">
-                        <li onclick="openServiceModal('Executive Search', 'Strategic headhunting for senior leadership roles.')">Executive Search & Headhunting</li>
-                        <li onclick="openServiceModal('Mass Recruitment', 'Large-scale hiring solutions for SMEs and Corporates.')">Mass Recruitment Solutions</li>
-                        <li onclick="openServiceModal('HR Consulting', 'Setting up HR departments and policy handbooks from scratch.')">HR Consulting & Advisory</li>
-                        <li onclick="openServiceModal('Payroll', 'End-to-end payroll processing and statutory compliance.')">Payroll & Outsourcing</li>
-                        <li onclick="openServiceModal('Training', 'Leadership, soft skills, and workplace etiquette workshops.')">Training & Development</li>
-                        <li onclick="openServiceModal('Data Analytics', 'Using SQL and Data tools to optimize HR performance.')">HR Data Analytics & Reporting</li>
-                    </ul>
-                </div>
+                <ul class="service-list">
+                    <li onclick="openServiceModal('Executive Search', 'We specialize in headhunting senior-level talent to lead your organization.')">Executive Search & Headhunting</li>
+                    <li onclick="openServiceModal('Mass Recruitment', 'Scalable hiring solutions for logistics, retail, and growing SMEs.')">Mass Recruitment Solutions</li>
+                    <li onclick="openServiceModal('HR Consulting', 'End-to-end setup of HR departments, policy handbooks, and compliance.')">HR Consulting & Advisory</li>
+                    <li onclick="openServiceModal('Data Analytics', 'Leveraging SQL and analytics to drive better hiring and retention decisions.')">HR Data Analytics & SQL Reporting</li>
+                    <li onclick="openServiceModal('Payroll', 'Accurate payroll management ensuring PAYE, Pension, and NSITF compliance.')">Payroll & Outsourcing</li>
+                    <li onclick="openServiceModal('Training', 'Soft skills, leadership development, and workplace etiquette training.')">Training & Development</li>
+                </ul>
             </div>
         </section>
 
-        <section class="footer" id="contact" style="background: var(--primary-blue); color: white;">
+        <footer class="footer" id="contact" style="background: var(--primary-blue); color: white;">
             <div class="container">
-                <div class="section-header">
-                    <h2 style="color: white;">Get In Touch</h2>
+                <h2 style="color: white; margin-bottom: 30px;">Get In Touch</h2>
+                <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:Recruit_Connect@outlook.com" style="color: white; text-decoration: none;">Recruit_Connect@outlook.com</a></p>
+                <div style="margin-top: 25px;">
+                    <a href="https://wa.me/2349025427977" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/Recruit_Connect01" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p><i class="fas fa-phone"></i> 07060432373 | 08028230847</p>
-                <p><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</p>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/2349025427977" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/Recruit_Connect01" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Recruitconnect Nig Ltd. All rights reserved.</p>
+                <p style="margin-top: 50px; font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Recruitconnect Nig Ltd. All rights reserved.</p>
             </div>
-        </section>
+        </footer>
     </main>
 
     <div id="mentorship-modal" class="modal">
         <div class="modal-content" id="reg-step-1">
             <span class="close-btn" onclick="closeMentorshipModal()">&times;</span>
-            <h3>Mentorship Registration</h3>
-            <p>Step 1: Fill in your details</p>
+            <h3 style="margin-top: 0;">Register for Mentorship</h3>
+            <p style="font-size: 0.9rem; color: var(--mid-text);">Submit your details to proceed to the payment page.</p>
             <form onsubmit="event.preventDefault(); showPaymentStep();">
                 <input type="text" placeholder="Full Name" required class="form-input">
                 <input type="email" placeholder="Email Address" required class="form-input">
-                <input type="tel" placeholder="WhatsApp Number" required class="form-input">
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit & Proceed to Payment</button>
+                <input type="tel" placeholder="WhatsApp Phone Number" required class="form-input">
+                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Proceed to Payment</button>
             </form>
         </div>
 
         <div class="modal-content" id="reg-step-2" style="display:none; text-align:center;">
             <span class="close-btn" onclick="closeMentorshipModal()">&times;</span>
-            <i class="fas fa-check-circle" style="font-size: 3rem; color: #2ecc71; margin-bottom: 15px;"></i>
+            <i class="fas fa-check-circle" style="font-size: 3.5rem; color: #2ecc71; margin-bottom: 15px;"></i>
             <h3>Form Submitted!</h3>
-            <p>Please complete your registration by making payment:</p>
+            <p>Please complete your registration by making payment to the account below:</p>
             <div class="payment-box">
-                <p><strong>Bank:</strong> [Insert Bank Name]</p>
+                <p><strong>Bank:</strong> [Your Bank Name]</p>
                 <p><strong>Account Name:</strong> Recruitconnect Nig Ltd</p>
-                <p><strong>Account Number:</strong> [Insert Number]</p>
+                <p><strong>Account Number:</strong> [Your Account Number]</p>
             </div>
-            <p style="font-size: 0.85rem; color: var(--mid-text);">After payment, share your receipt on WhatsApp for confirmation.</p>
-            <a href="https://wa.me/2349025427977?text=Hi%20Admin,%20I%20just%20completed%20the%20Mentorship%20registration%20form.%20Here%20is%20my%20receipt." target="_blank" class="btn" style="background: var(--whatsapp-green); color: white; width: 100%;">
-                <i class="fab fa-whatsapp"></i> Send Receipt to Admin
+            <p style="font-size: 0.85rem; color: var(--mid-text); margin-bottom: 20px;">After payment, click the button below to share your receipt with our Admins for confirmation.</p>
+            <a href="https://wa.me/2349025427977?text=Hi%20Admin,%20I%20have%20completed%20the%20registration%20form%20for%20the%20Mentorship%20Class.%20Here%20is%20my%20payment%20receipt." target="_blank" class="btn" style="background: var(--whatsapp-green); color: white; width: 100%; border-radius: 8px;">
+                <i class="fab fa-whatsapp"></i> Share Receipt to Admin
             </a>
         </div>
     </div>
 
-    <div id="service-modal" class="modal">
+    <div id="info-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('service-modal').style.display='none'">&times;</span>
-            <h3 id="service-title"></h3>
-            <p id="service-desc"></p>
+            <span class="close-btn" onclick="document.getElementById('info-modal').style.display='none'">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc"></p>
         </div>
     </div>
 
@@ -276,9 +267,9 @@
         }
 
         function openServiceModal(title, desc) {
-            document.getElementById('service-title').innerText = title;
-            document.getElementById('service-desc').innerText = desc;
-            document.getElementById('service-modal').style.display = 'flex';
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('info-modal').style.display = 'flex';
         }
 
         window.onclick = function(event) {
