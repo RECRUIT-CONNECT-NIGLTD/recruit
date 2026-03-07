@@ -4,201 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruitconnect | HR & Recruitment Solutions</title>
-    <meta name="description" content="Recruitconnect provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.">
+    <meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
+    <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
+
+    <!-- Google Fonts: Poppins for headings, Lato for body -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* --- Variables --- */
+        /* --- General Styling & Color Palette --- */
         :root {
             --primary-blue: #0A2342;
             --secondary-gold: #FFB703;
             --light-gray-bg: #F4F7F9;
-            --dark-text: #333;
-            --mid-text: #666;
-            --white: #fff;
+            --dark-text: #333333;
+            --mid-text: #666666;
+            --white: #FFFFFF;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Lato', sans-serif; color: var(--dark-text); line-height: 1.6; background-color: var(--white); }
-        a { text-decoration: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        h1,h2,h3 { font-family: 'Poppins', sans-serif; color: var(--primary-blue); }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; position: relative; }
-        .section-header h2::after { content: ''; width: 80px; height: 4px; background-color: var(--secondary-gold); position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); }
-        .section-header p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-        /* --- Navbar --- */
-        .navbar { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .navbar-logo { display: flex; align-items: center; font-weight: 700; font-size: 1.5rem; color: var(--primary-blue); }
-        .navbar-logo img { height: 40px; margin-right: 10px; }
-        .navbar-links { display: flex; gap: 25px; }
-        .navbar-links a { color: var(--primary-blue); font-weight: 600; transition: color 0.3s; }
-        .navbar-links a:hover { color: var(--secondary-gold); }
-        .navbar-toggle { display: none; cursor: pointer; font-size: 1.8rem; color: var(--primary-blue); }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-        /* --- Hero --- */
-        .hero-section { background: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat; color: var(--white); text-align: center; padding: 200px 20px 150px 20px; position: relative; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 35, 66, 0.85); }
-        .hero-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
-        .hero-logo { height: 120px; margin-bottom: 25px; border-radius: 10px; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; }
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 600; text-transform: uppercase; transition: all 0.3s; margin: 5px; }
-        .btn-primary { background-color: var(--secondary-gold); color: var(--primary-blue); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-gold);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .navbar-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 25px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: var(--secondary-gold);
+        }
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding-top: 200px;
+        }
+        
+        .hero-overlay {
+            background-color: rgba(10, 35, 66, 0.85);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-logo {
+            height: 150px;
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- Services Section & Lists --- */
+        .services-section { padding: 80px 0; }
+        .service-category { margin-bottom: 60px; padding: 40px; background-color: var(--light-gray-bg); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .service-category h3 { font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; border-bottom: 2px solid var(--secondary-gold); display: inline-block; padding-bottom: 5px; }
+        .service-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .service-list li { background-color: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; padding-left: 45px; font-weight: 600; cursor: pointer; }
+        .service-list li::before { content: '✓'; color: var(--secondary-gold); font-size: 1.2rem; font-weight: bold; position: absolute; left: 15px; top: 50%; transform: translateY(-50%); }
+        .service-list li:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* --- Signature Services Section --- */
+        .signature-services-section { padding: 80px 0; background-color: var(--primary-blue); color: var(--white); }
+        .signature-services-section h2 { color: var(--white); }
+        .signature-services-section .section-header h2::after { background-color: var(--secondary-gold); }
+        .signature-services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; list-style: none; padding: 0; text-align: center; }
+        .signature-services-list li { background-color: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 30px; transition: background-color 0.3s ease; cursor: pointer; }
+        .signature-services-list li:hover { background-color: rgba(255, 255, 255, 0.2); }
+        .signature-services-list h4 { font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 10px; color: var(--secondary-gold); }
+        .signature-services-list p { font-size: 1rem; color: var(--white); }
 
         /* --- Why Choose Section --- */
-        .why-choose, .industries, .mentorship, .founders, .form-section { padding: 80px 0; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 25px; }
-        .card { background: var(--light-gray-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h4 { color: var(--primary-blue); margin-bottom: 10px; }
+        .why-choose-section { padding: 80px 0; background-color: var(--light-gray-bg); }
+        .why-choose-list { list-style: none; padding:0; display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; text-align:left; }
+        .why-choose-list li { padding-left:30px; position:relative; font-weight:600; margin-bottom:15px; }
+        .why-choose-list li::before { content:'✔'; color: var(--secondary-gold); position:absolute; left:0; }
 
-        /* --- Form Section --- */
-        .form-section form { display: grid; gap: 15px; max-width: 600px; margin: 0 auto; }
-        .form-section input, .form-section select { padding: 12px; border-radius: 8px; border: 1px solid #ccc; }
-        .form-section button { background-color: var(--primary-blue); color: var(--white); padding: 12px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; }
-        .form-section button:hover { background-color: var(--secondary-gold); color: var(--primary-blue); }
+        /* --- Industries We Serve --- */
+        .industries-section { padding:80px 0; }
+        .industries-list { list-style:none; padding:0; display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; text-align:center; font-weight:600; }
+
+        /* --- Mentorship Section --- */
+        .mentorship-section { padding:80px 0; background-color: var(--white); }
 
         /* --- Founders Section --- */
-        .founder-card { text-align: center; }
-        .founder-card img { width: 180px; height: 180px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
-        .founder-card h4 { font-weight: 700; color: var(--primary-blue); margin-bottom: 5px; }
-        .founder-card p { color: var(--mid-text); }
+        .founders-section { padding:80px 0; background-color: var(--light-gray-bg); }
+        .founders-grid img { border-radius:50%; object-fit:cover; }
+
+        /* --- Contact Section --- */
+        .contact-section { padding: 80px 0; }
+        .contact-info { display:flex; flex-direction:column; align-items:center; gap:20px; }
+        .contact-info p { margin:0; font-size:1.1rem; }
+        .contact-info a { color: var(--primary-blue); text-decoration:none; transition: color 0.3s ease; }
+        .contact-info a:hover { color: var(--secondary-gold); }
+        .social-links { display:flex; gap:25px; margin-top:20px; }
+        .social-links a { font-size:2.5rem; color: var(--primary-blue); transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--secondary-gold); }
 
         /* --- Footer --- */
-        .footer { background: #1a1a1a; color: var(--mid-text); text-align: center; padding: 40px 0; font-size: 0.9rem; }
+        .footer { background-color:#1a1a1a; color: var(--mid-text); text-align:center; padding:40px 0; font-size:0.9rem; }
+
+        /* --- Modal Styling --- */
+        .modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); align-items:center; justify-content:center; }
+        .modal-content { background-color: var(--white); margin:auto; padding:30px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.2); position:relative; max-width:600px; width:90%; animation: fadeIn 0.3s ease; }
+        .modal-content h3 { margin-top:0; }
+        .close-btn { color: var(--dark-text); position:absolute; top:15px; right:25px; font-size:28px; font-weight:bold; cursor:pointer; transition: color 0.3s ease; }
+        .close-btn:hover, .close-btn:focus { color: var(--primary-blue); text-decoration:none; }
+
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+        .fade-in { opacity:0; transform:translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
 
         /* --- Media Queries --- */
-        @media(max-width:768px){.navbar-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:var(--white);padding:10px 20px;box-shadow:0 5px 10px rgba(0,0,0,0.1);}.navbar-links.active{display:flex;}}
+        @media(max-width:768px){
+            .hero-content h1{ font-size:2.5rem; }
+            .hero-content p{ font-size:1.1rem; }
+            .section-header h2{ font-size:2rem; }
+            .navbar-links{ display:none; flex-direction:column; position:absolute; top:70px; left:0; width:100%; background-color: var(--white); padding:10px 20px; box-shadow:0 5px 10px rgba(0,0,0,0.1); }
+            .navbar-links.active{ display:flex; }
+            .navbar-links a{ padding:10px 0; border-bottom:1px solid var(--light-gray-bg); }
+            .navbar-toggle{ display:block; font-size:1.8rem; color: var(--primary-blue); }
+        }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navigation Bar -->
 <nav class="navbar">
-  <div class="container">
-    <a href="#" class="navbar-logo"><img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">Recruitconnect</a>
-    <div class="navbar-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why Choose</a>
-      <a href="#industries">Industries</a>
-      <a href="#founders">Founders</a>
-      <a href="#mentorship">Mentorship</a>
-      <a href="#form">Recruitment Form</a>
-      <a href="#contact">Contact</a>
+    <div class="container">
+        <a href="#" class="navbar-logo">
+            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">
+            Recruitconnect
+        </a>
+        <div class="navbar-links">
+            <a href="#services">Services</a>
+            <a href="#signature-services">Signature Services</a>
+            <a href="#why-choose">Why Choose</a>
+            <a href="#industries">Industries</a>
+            <a href="#founders">Founders</a>
+            <a href="#mentorship">Mentorship</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="navbar-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
-    <div class="navbar-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-  </div>
 </nav>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <header class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content container">
-    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Logo" class="hero-logo">
-    <h1>Helping Businesses Hire the Right Talent Faster</h1>
-    <p>Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.</p>
-   <a href="#services" class="btn btn-primary" id="hire-talent-btn">Hire Talent</a>
-<a href="#recruitment-form" class="btn btn-primary">Submit Recruitment Request</a>
-  </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+        <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo" class="hero-logo">
+        <h1>Helping Businesses Hire the Right Talent Faster</h1>
+        <p>Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.</p>
+        <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+            <a href="#services" class="btn btn-primary">Hire Talent</a>
+            <a href="#mentorship" class="btn btn-primary">Submit Recruitment Request</a>
+        </div>
+    </div>
 </header>
 
-<!-- Why Choose Section -->
-<section class="why-choose container" id="why">
-  <div class="section-header"><h2>Why Choose Recruitconnect?</h2></div>
-  <div class="cards">
-    <div class="card">✔ Fast Turnaround Hiring</div>
-    <div class="card">✔ Pre-screened Qualified Candidates</div>
-    <div class="card">✔ Cost-effective Recruitment</div>
-    <div class="card">✔ Industry-Focused Hiring (Logistics, Tech, Sales, Admin e.t.c)</div>
-    <div class="card">✔ Flexible Recruitment Plans</div>
-  </div>
-</section>
-
-<!-- Industries Section -->
-<section class="industries container" id="industries">
-  <div class="section-header"><h2>Industries We Serve</h2></div>
-  <div class="cards">
-    <div class="card">Logistics & Transportation</div>
-    <div class="card">Technology Companies</div>
-    <div class="card">Financial Services</div>
-    <div class="card">Startups & SMEs</div>
-    <div class="card">Hospitality</div>
-    <div class="card">Retail & Sales</div>
-  </div>
-</section>
-
-<!-- Founders Section -->
-<section class="founders container" id="founders">
-  <div class="section-header"><h2>Our Founders</h2></div>
-  <div class="cards">
-    <div class="founder-card">
-      <img src="founder1.jpg" alt="Founder">
-      <h4>Founder Name</h4>
-      <p>Founder</p>
-    </div>
-    <div class="founder-card">
-      <img src="cofounder1.jpg" alt="Co-Founder">
-      <h4>Co-Founder Name</h4>
-      <p>Co-Founder</p>
-    </div>
-  </div>
-</section>
-
-<!-- Mentorship Section -->
-<section class="mentorship container" id="mentorship">
-  <div class="section-header"><h2>Mentorship Program</h2>
-  <p>We guide aspiring professionals to accelerate their careers through expert mentorship.</p></div>
-</section>
-
-<!-- Recruitment Form -->
-<section class="form-section container" id="form">
-  <div class="section-header"><h2>Submit a Recruitment Request</h2></div>
-  <form action="" method="POST" onsubmit="return handleFormSubmit(event)">
-    <input type="text" name="company" placeholder="Company Name" required>
-    <input type="text" name="contact" placeholder="Contact Person" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="phone" placeholder="Phone" required>
-    <input type="text" name="position" placeholder="Position to Hire" required>
-    <input type="number" name="number" placeholder="Number of Candidates" required>
-    <input type="text" name="location" placeholder="Location" required>
-    <input type="text" name="salary" placeholder="Salary Range" required>
-    <button type="submit">Proceed to Payment</button>
-  </form>
-  <p style="text-align:center; margin-top:15px;">Payment Details:<br>Bank: Palmpay | Account Number: 8164475510 | Account Name: Okorie Nnenna Blessing<br>After payment, send proof to admin WhatsApp to join the group.</p>
-</section>
-
-<!-- Contact Section -->
-<section class="contact-section container" id="contact">
-  <div class="section-header"><h2>Get In Touch</h2></div>
-  <div class="contact-info">
-    <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
-    <p><a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</a></p>
-    <p><a href="https://wa.me/2349025427977" target="_blank"><i class="fab fa-whatsapp"></i> 09025427977</a></p>
-  </div>
-</section>
-
-<footer class="footer">&copy; 2025 Recruitconnect. All rights reserved.</footer>
-
-<script>
-  document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-    document.querySelector('.navbar-links').classList.toggle('active');
-  });
-
-    // Smooth scroll for Hire Talent button
-document.getElementById('hire-talent-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
-});
-
-  function handleFormSubmit(e){
-    e.preventDefault();
-    alert('Please make payment to: Palmpay 8164475510 (Okorie Nnenna Blessing) and send proof to admin WhatsApp.');
-    e.target.reset();
-  }
-</script>
-</body>
-</html>
+<main>
+<!-- Services Section -->
+<section class="services-section" id="services">
