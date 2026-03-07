@@ -4,225 +4,287 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recruitconnect | HR & Recruitment Solutions</title>
-<meta name="description" content="Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.">
+<meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-    /* General styling */
-    :root {
-        --primary-blue: #0A2342;
-        --secondary-gold: #FFB703;
-        --light-gray-bg: #F4F7F9;
-        --dark-text: #333333;
-        --mid-text: #666666;
-        --white: #FFFFFF;
-    }
-    body {font-family:'Lato',sans-serif;margin:0;padding:0;line-height:1.6;color:var(--dark-text);background-color:var(--white);scroll-behavior:smooth;}
-    h1,h2,h3 {font-family:'Poppins',sans-serif;color:var(--primary-blue);}
-    .container {max-width:1200px;margin:0 auto;padding:0 20px;}
-    .section-header{text-align:center;margin-bottom:50px;}
-    .section-header h2{font-size:2.5rem;font-weight:700;margin-bottom:15px;position:relative;}
-    .section-header h2::after{content:'';width:80px;height:4px;background-color:var(--secondary-gold);position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);}
-    .section-header p{font-size:1.1rem;max-width:700px;margin:0 auto;}
-    .navbar{background-color:var(--white);padding:15px 0;box-shadow:0 2px 5px rgba(0,0,0,0.1);position:fixed;width:100%;top:0;left:0;z-index:1000;transition:all 0.3s ease;}
-    .navbar .container{display:flex;justify-content:space-between;align-items:center;}
-    .navbar-logo{text-decoration:none;color:var(--primary-blue);font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;display:flex;align-items:center;}
-    .navbar-logo img{height:40px;margin-right:10px;}
-    .navbar-links{display:flex;gap:25px;}
-    .navbar-links a{text-decoration:none;color:var(--primary-blue);font-weight:600;transition:color 0.3s;}
-    .navbar-links a:hover{color:var(--secondary-gold);}
-    .navbar-toggle{display:none;cursor:pointer;}
-    .hero-section{background-color:var(--primary-blue);color:var(--white);text-align:center;padding:200px 0;min-height:500px;position:relative;background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');background-size:cover;background-position:center;}
-    .hero-overlay{background-color:rgba(10,35,66,0.85);position:absolute;top:0;left:0;width:100%;height:100%;}
-    .hero-content{position:relative;z-index:10;}
-    .hero-logo{height:150px;margin-bottom:25px;}
-    .hero-content h1{font-size:3.5rem;font-weight:700;margin-bottom:15px;color:var(--white);}
-    .hero-content p{font-size:1.3rem;max-width:800px;margin:0 auto 30px auto;}
-    .btn{display:inline-block;padding:12px 30px;font-size:1rem;font-weight:600;text-transform:uppercase;border-radius:50px;text-decoration:none;transition:all 0.3s;}
-    .btn-primary{background-color:var(--secondary-gold);color:var(--primary-blue);}
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,0.2);}
-    /* Sections */
-    .services-section,.why-choose,.industries,.mentorship,.job-board,.contact-section{padding:80px 0;}
-    .service-category,.why-choose,.industries,.job-board-item{margin-bottom:40px;padding:40px;background-color:var(--light-gray-bg);border-radius:12px;}
-    .service-category h3,.why-choose h3,.industries h3{margin-bottom:20px;color:var(--primary-blue);}
-    .service-list,.why-list,.industry-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
-    .service-list li,.why-list li,.industry-list li{background-color:var(--white);padding:15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);position:relative;padding-left:35px;font-weight:600;cursor:pointer;}
-    .service-list li::before,.why-list li::before,.industry-list li::before{content:'✔';color:var(--secondary-gold);position:absolute;left:10px;top:50%;transform:translateY(-50%);}
-    .job-board-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
-    .job-board-item{background-color:var(--white);padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-    .job-board-item h4{margin-top:0;}
-    /* Contact Section */
-    .contact-info{display:flex;flex-direction:column;align-items:center;gap:20px;}
-    .contact-info p{margin:0;font-size:1.1rem;}
-    .contact-info a{color:var(--primary-blue);text-decoration:none;transition:color 0.3s;}
-    .contact-info a:hover{color:var(--secondary-gold);}
-    .social-links{display:flex;gap:25px;margin-top:20px;}
-    .social-links a{font-size:2.5rem;color:var(--primary-blue);transition:color 0.3s;}
-    .social-links a:hover{color:var(--secondary-gold);}
-    /* Modal */
-    .modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);align-items:center;justify-content:center;}
-    .modal-content{background-color:var(--white);margin:auto;padding:30px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.2);position:relative;max-width:600px;width:90%;animation:fadeIn 0.3s ease;}
-    .modal-content h3{margin-top:0;}
-    .close-btn{color:var(--dark-text);position:absolute;top:15px;right:25px;font-size:28px;font-weight:bold;cursor:pointer;transition:color 0.3s;}
-    .close-btn:hover{color:var(--primary-blue);}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-    .footer{background-color:#1a1a1a;color:var(--mid-text);text-align:center;padding:40px 0;font-size:0.9rem;}
-    @media(max-width:768px){.hero-content h1{font-size:2.5rem;}.hero-content p{font-size:1.1rem;}.section-header h2{font-size:2rem;}.navbar-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background-color:var(--white);padding:10px 20px;box-shadow:0 5px 10px rgba(0,0,0,0.1);}.navbar-links.active{display:flex;}.navbar-links a{padding:10px 0;border-bottom:1px solid var(--light-gray-bg);}.navbar-toggle{display:block;font-size:1.8rem;color:var(--primary-blue);}}
+:root {
+    --primary-blue: #0A2342;
+    --secondary-gold: #FFB703;
+    --light-gray-bg: #F4F7F9;
+    --dark-text: #333333;
+    --mid-text: #666666;
+    --white: #FFFFFF;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+.container { max-width: 1200px; margin:0 auto; padding:0 20px; }
+h1,h2,h3,h4 { font-family:'Poppins', sans-serif; color: var(--primary-blue); }
+.section-header { text-align:center; margin-bottom:50px; }
+.section-header h2 { font-size:2.5rem; font-weight:700; margin-bottom:15px; position:relative; }
+.section-header h2::after { content:''; width:80px; height:4px; background-color: var(--secondary-gold); position:absolute; left:50%; bottom:-10px; transform: translateX(-50%); }
+.section-header p { font-size:1.1rem; max-width:700px; margin:0 auto; }
+
+/* Navbar */
+.navbar { background-color: var(--white); padding:15px 0; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:fixed; width:100%; top:0; z-index:1000; transition: all 0.3s ease; }
+.navbar .container { display:flex; justify-content:space-between; align-items:center; }
+.navbar-logo { display:flex; align-items:center; text-decoration:none; color: var(--primary-blue); font-family:'Poppins',sans-serif; font-weight:700; font-size:1.5rem; }
+.navbar-logo img { height:40px; margin-right:10px; }
+.navbar-links { display:flex; gap:25px; }
+.navbar-links a { text-decoration:none; color: var(--primary-blue); font-weight:600; transition: color 0.3s ease; }
+.navbar-links a:hover { color: var(--secondary-gold); }
+.navbar-toggle { display:none; cursor:pointer; }
+
+/* Hero Section */
+.hero-section { background-color: var(--primary-blue); color: var(--white); text-align:center; padding:180px 20px 100px 20px; position:relative; background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop'); background-size:cover; background-position:center; }
+.hero-overlay { background-color: rgba(10,35,66,0.85); position:absolute; top:0; left:0; width:100%; height:100%; }
+.hero-content { position:relative; z-index:10; }
+.hero-logo { height:150px; margin-bottom:25px; }
+.hero-content h1 { font-size:3rem; font-weight:700; margin-bottom:15px; }
+.hero-content p { font-size:1.3rem; max-width:800px; margin:0 auto 30px auto; }
+.btn { display:inline-block; padding:12px 30px; font-size:1rem; font-weight:600; text-transform:uppercase; border-radius:50px; text-decoration:none; transition: all 0.3s ease; margin:5px; }
+.btn-primary { background-color: var(--secondary-gold); color: var(--primary-blue); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+/* Why Choose */
+.why-choose { background-color: var(--light-gray-bg); padding:80px 20px; }
+.why-choose ul { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:0; }
+.why-choose li { background-color: var(--white); padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); font-weight:600; display:flex; align-items:center; gap:10px; }
+.why-choose li i { color: var(--secondary-gold); font-size:1.5rem; }
+
+/* Industries */
+.industries { padding:80px 20px; }
+.industries-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; list-style:none; padding:0; }
+.industries-list li { background-color: var(--light-gray-bg); padding:25px; border-radius:12px; text-align:center; font-weight:600; transition: transform 0.2s ease; }
+.industries-list li:hover { transform: translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+
+/* Form Section */
+.form-section { padding:80px 20px; background-color: var(--white); }
+.form-section form { max-width:700px; margin:0 auto; display:grid; gap:20px; }
+.form-section input, .form-section select { padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; width:100%; }
+.form-section button { padding:15px; font-weight:700; border:none; border-radius:50px; background-color: var(--primary-blue); color: var(--white); cursor:pointer; }
+
+/* Mentorship Section */
+.mentorship { padding:80px 20px; background-color: var(--primary-blue); color: var(--white); text-align:center; }
+
+/* Founder Section */
+.founders { padding:80px 20px; background-color: var(--light-gray-bg); }
+.founders-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; list-style:none; padding:0; text-align:center; }
+.founders-list li img { width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px; }
+
+/* Services & Signature Services */
+.services-section, .signature-services-section { padding:80px 20px; }
+.services-section .service-category, .signature-services-section .signature-services-list li { margin-bottom:60px; padding:40px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); background-color: var(--light-gray-bg); }
+.service-list, .signature-services-list { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+.service-list li, .signature-services-list li { background-color: var(--white); padding:20px; border-radius:8px; cursor:pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; position:relative; padding-left:45px; font-weight:600; }
+.service-list li::before { content:'✓'; color: var(--secondary-gold); font-size:1.2rem; font-weight:bold; position:absolute; left:15px; top:50%; transform:translateY(-50%); }
+.service-list li:hover, .signature-services-list li:hover { transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+
+/* Modal */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); align-items:center; justify-content:center; }
+.modal-content { background-color: var(--white); margin:auto; padding:30px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.2); position:relative; max-width:600px; width:90%; animation: fadeIn 0.3s ease; }
+.modal-content h3 { margin-top:0; }
+.close-btn { color: var(--dark-text); position:absolute; top:15px; right:25px; font-size:28px; font-weight:bold; cursor:pointer; transition: color 0.3s ease; }
+.close-btn:hover, .close-btn:focus { color: var(--primary-blue); text-decoration:none; }
+
+/* Footer */
+.footer { background-color:#1a1a1a; color: var(--mid-text); text-align:center; padding:40px 0; font-size:0.9rem; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+
+/* Responsive */
+@media(max-width:768px){ .hero-content h1{ font-size:2.2rem; } .hero-content p{ font-size:1rem; } .section-header h2{ font-size:2rem; } .navbar-links{ display:none; flex-direction:column; } .navbar-links.active{ display:flex; } .navbar-toggle{ display:block; font-size:1.8rem; color: var(--primary-blue); } }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Navbar -->
 <nav class="navbar">
-  <div class="container">
+<div class="container">
     <a href="#" class="navbar-logo">
-      <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">Recruitconnect
+        <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">
+        Recruitconnect
     </a>
     <div class="navbar-links">
-      <a href="#services">Services</a>
-      <a href="#why-choose">Why Choose</a>
-      <a href="#industries">Industries</a>
-      <a href="#mentorship">Mentorship</a>
-      <a href="#job-board">Job Board</a>
-      <a href="#contact">Contact</a>
+        <a href="#hero">Home</a>
+        <a href="#why-choose">Why Choose</a>
+        <a href="#industries">Industries</a>
+        <a href="#form-section">Hire Talent</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#founders">Founders</a>
+        <a href="#services">Services</a>
+        <a href="#signature-services">Signature Services</a>
+        <a href="#contact">Contact</a>
     </div>
-    <div class="navbar-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-  </div>
+    <div class="navbar-toggle" id="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
 </nav>
 
 <!-- Hero -->
-<header class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content container">
-    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Logo" class="hero-logo">
-    <h1>Helping Businesses Hire the Right Talent Faster.</h1>
+<header class="hero-section" id="hero">
+<div class="hero-overlay"></div>
+<div class="hero-content container">
+    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo" class="hero-logo">
+    <h1>Helping Businesses Hire the Right Talent Faster</h1>
     <p>Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.</p>
-    <a href="#job-board" class="btn btn-primary">Hire Talent</a>
-    <a href="#recruitment-form" class="btn btn-primary">Submit Recruitment Request</a>
-  </div>
+    <a href="#form-section" class="btn btn-primary">Hire Talent</a>
+    <a href="#form-section" class="btn btn-primary">Submit Recruitment Request</a>
+</div>
 </header>
 
 <!-- Why Choose -->
 <section class="why-choose" id="why-choose">
-  <div class="container">
-    <div class="section-header">
-      <h2>Why Choose Recruitconnect?</h2>
-    </div>
-    <ul class="why-list">
-      <li>Fast Turnaround Hiring</li>
-      <li>Pre-screened Qualified Candidates</li>
-      <li>Cost-effective Recruitment</li>
-      <li>Industry-Focused Hiring (Logistics, Tech, Sales, Admin, etc.)</li>
-      <li>Flexible Recruitment Plans</li>
-    </ul>
-  </div>
+<div class="container">
+<div class="section-header"><h2>Why Choose Recruitconnect?</h2></div>
+<ul>
+<li><i class="fas fa-bolt"></i> Fast Turnaround Hiring</li>
+<li><i class="fas fa-check-circle"></i> Pre-screened Qualified Candidates</li>
+<li><i class="fas fa-dollar-sign"></i> Cost-effective Recruitment</li>
+<li><i class="fas fa-industry"></i> Industry-Focused Hiring (Logistics, Tech, Sales, Admin e.t.c)</li>
+<li><i class="fas fa-cogs"></i> Flexible Recruitment Plans</li>
+</ul>
+</div>
 </section>
 
-<!-- Industries We Serve -->
+<!-- Industries -->
 <section class="industries" id="industries">
-  <div class="container">
-    <div class="section-header">
-      <h2>Industries We Serve</h2>
-    </div>
-    <ul class="industry-list">
-      <li>Logistics & Transportation</li>
-      <li>Technology Companies</li>
-      <li>Financial Services</li>
-      <li>Startups & SMEs</li>
-      <li>Hospitality</li>
-      <li>Retail & Sales</li>
-    </ul>
-  </div>
+<div class="container">
+<div class="section-header"><h2>Industries We Serve</h2></div>
+<ul class="industries-list">
+<li>Logistics & Transportation</li>
+<li>Technology Companies</li>
+<li>Financial Services</li>
+<li>Startups & SMEs</li>
+<li>Hospitality</li>
+<li>Retail & Sales</li>
+</ul>
+</div>
 </section>
 
-<!-- Mentorship Section -->
+<!-- Services Section (Original with modal) -->
+<section class="services-section" id="services">
+<div class="container">
+<div class="section-header">
+<h2>Our Comprehensive Solutions</h2>
+<p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business.</p>
+</div>
+
+<!-- Include your original service categories here (same as the code you provided) -->
+
+</div>
+</section>
+
+<!-- Signature Services Section -->
+<section class="signature-services-section" id="signature-services">
+<div class="container">
+<div class="section-header">
+<h2>Recruitconnect Signature Services</h2>
+<p>Our unique offerings provide specialized solutions for both businesses and job seekers.</p>
+</div>
+<ul class="signature-services-list">
+<!-- Include your original signature services here -->
+</ul>
+</div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section" id="form-section">
+<div class="container">
+<div class="section-header"><h2>Submit a Recruitment Request</h2></div>
+<form id="recruit-form">
+<input type="text" placeholder="Company Name" required>
+<input type="text" placeholder="Contact Person" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Phone" required>
+<input type="text" placeholder="Position to Hire" required>
+<input type="number" placeholder="Number of Candidates" required>
+<input type="text" placeholder="Location" required>
+<input type="text" placeholder="Salary Range" required>
+<button type="submit">Proceed to Payment</button>
+</form>
+<div id="payment-info" style="display:none; margin-top:30px; background-color:#f4f7f9; padding:20px; border-radius:12px;">
+<h3>Payment Details</h3>
+<p>Bank: Palmpay</p>
+<p>Account Number: 8164475510</p>
+<p>Account Name: Okorie Nnenna Blessing</p>
+<p>After making payment, submit a screenshot of your payment to the admin's WhatsApp. Once confirmed, you will be added to the WhatsApp group.</p>
+</div>
+</div>
+</section>
+
+<!-- Mentorship -->
 <section class="mentorship" id="mentorship">
-  <div class="container">
-    <div class="section-header">
-      <h2>Mentorship Program</h2>
-      <p>Quarterly HR mentorship classes to help you move into HR. Fill the form, make payment, and confirm via WhatsApp with an admin.</p>
-    </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform" target="_blank" class="btn btn-primary">Register for Mentorship Class</a>
-  </div>
+<div class="container">
+<div class="section-header">
+<h2>Mentorship Programs</h2>
+<p>We offer personalized mentorship to help aspiring professionals and entrepreneurs navigate their careers and business challenges effectively.</p>
+</div>
+</div>
 </section>
 
-<!-- Job Board -->
-<section class="job-board" id="job-board">
-  <div class="container">
-    <div class="section-header">
-      <h2>Job Board</h2>
-    </div>
-    <ul class="job-board-list">
-      <li class="job-board-item">
-        <h4>Sales Executive</h4>
-        <p>Location: Lagos | Salary: Competitive</p>
-        <a href="mailto:Recruit_Connect@outlook.com?subject=Application%20for%20Sales%20Executive" class="btn btn-primary">Apply Now</a>
-      </li>
-      <li class="job-board-item">
-        <h4>HR Assistant</h4>
-        <p>Location: Abuja | Salary: 200k-250k</p>
-        <a href="mailto:Recruit_Connect@outlook.com?subject=Application%20for%20HR%20Assistant" class="btn btn-primary">Apply Now</a>
-      </li>
-    </ul>
-  </div>
+<!-- Founders -->
+<section class="founders" id="founders">
+<div class="container">
+<div class="section-header"><h2>Our Founders</h2></div>
+<ul class="founders-list">
+<li><img src="https://via.placeholder.com/180" alt="Founder"><h4>Founder: Okorie Nnenna Blessing</h4></li>
+<li><img src="https://via.placeholder.com/180" alt="Co-Founder"><h4>Co-Founder: [Co-Founder Name]</h4></li>
+</ul>
+</div>
 </section>
 
-<!-- Recruitment Request Form Modal -->
-<section id="recruitment-form" class="services-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Submit a Recruitment Request</h2>
-    </div>
-    <form action="mailto:Recruit_Connect@outlook.com" method="post" enctype="text/plain">
-      <label>Company Name</label><br><input type="text" name="Company Name" required><br>
-      <label>Contact Person</label><br><input type="text" name="Contact Person" required><br>
-      <label>Email</label><br><input type="email" name="Email" required><br>
-      <label>Phone</label><br><input type="text" name="Phone" required><br>
-      <label>Position to Hire</label><br><input type="text" name="Position" required><br>
-      <label>Number of Candidates</label><br><input type="number" name="Number of Candidates" required><br>
-      <label>Location</label><br><input type="text" name="Location" required><br>
-      <label>Salary Range</label><br><input type="text" name="Salary Range"><br><br>
-      <input type="submit" value="Submit" class="btn btn-primary">
-    </form>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="section-header">
-      <h2>Get In Touch</h2>
-    </div>
-    <div class="contact-info">
-      <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
-      <p><a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</a></p>
-      <p><a href="https://wa.me/2349025427977" target="_blank"><i class="fab fa-whatsapp"></i> 09025427977</a></p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/Recruit_Connect01" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@recruitconnect.ni" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
-  </div>
+<!-- Footer -->
+<footer class="footer" id="contact">
+<div class="container">
+<p>&copy; 2025 Recruitconnect. All rights reserved.</p>
+</div>
 </footer>
 
-<!-- Mobile Menu Script -->
-<script>
-document.getElementById('mobile-menu-toggle').addEventListener('click', function(){
-  document.querySelector('.navbar-links').classList.toggle('active');
-});
-</script>
+<!-- Modal for Services -->
+<div id="service-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h3 id="modal-title"></h3>
+<p id="modal-description"></p>
+</div>
+</div>
 
+<script>
+// Mobile Menu Toggle
+document.getElementById('mobile-menu-toggle').addEventListener('click', function(){ document.querySelector('.navbar-links').classList.toggle('active'); });
+
+// Form Submit -> Show Payment
+document.getElementById('recruit-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('payment-info').style.display='block';
+    window.scrollTo({ top: document.getElementById('payment-info').offsetTop-50, behavior:'smooth' });
+});
+
+// Modal functionality for services
+const modal = document.getElementById('service-modal');
+const closeBtn = document.querySelector('.close-btn');
+function openModal(title, description){ document.getElementById('modal-title').innerText=title; document.getElementById('modal-description').innerText=description; modal.style.display='flex'; }
+closeBtn.addEventListener('click', ()=> modal.style.display='none');
+window.addEventListener('click', e => { if(e.target==modal) modal.style.display='none'; });
+const serviceItems = document.querySelectorAll('.service-list li, .signature-services-list li');
+serviceItems.forEach(item=>item.addEventListener('click', function(){
+    const title = this.getAttribute('data-title');
+    const desc = this.getAttribute('data-description');
+    openModal(title, desc);
+}));
+</script>
 </body>
 </html>
