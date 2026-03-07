@@ -4,279 +4,662 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruitconnect | HR & Recruitment Solutions</title>
-    <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, and professional mentorship.">
+    <meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
+    <meta name="description" content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management. Partner with us for your people management needs.">
     
+    <!-- Google Fonts: Poppins for headings, Lato for body -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* --- General Styling & Color Palette --- */
         :root {
-            --primary-blue: #0A2342;
-            --secondary-gold: #FFB703;
-            --light-gray-bg: #F4F7F9;
+            --primary-blue: #0A2342; /* Dark, professional blue */
+            --secondary-gold: #FFB703; /* A warm, engaging gold */
+            --light-gray-bg: #F4F7F9; /* Subtle light gray for sections */
             --dark-text: #333333;
             --mid-text: #666666;
             --white: #FFFFFF;
-            --whatsapp-green: #25D366;
         }
 
         body {
             font-family: 'Lato', sans-serif;
             color: var(--dark-text);
             line-height: 1.6;
+            background-color: var(--white);
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--primary-blue); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        /* --- Navigation --- */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-gold);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Navigation Bar --- */
         .navbar {
-            background: var(--white);
+            background-color: var(--white);
             padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
-            top: 0; z-index: 1000;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .navbar-logo { display: flex; align-items: center; text-decoration: none; color: var(--primary-blue); font-weight: 700; font-size: 1.3rem; }
-        .navbar-logo img { height: 40px; margin-right: 10px; }
-        .navbar-links { display: flex; gap: 25px; }
-        .navbar-links a { text-decoration: none; color: var(--primary-blue); font-weight: 600; transition: 0.3s; }
-        .navbar-links a:hover { color: var(--secondary-gold); }
-
-        /* --- Hero --- */
-        .hero-section {
-            background: linear-gradient(rgba(10, 35, 66, 0.85), rgba(10, 35, 66, 0.85)), url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center;
-            color: var(--white); text-align: center; padding: 180px 0 100px;
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .hero-logo { height: 120px; margin-bottom: 20px; border-radius: 10px; }
-        .hero-content h1 { color: var(--white); font-size: 3rem; margin-bottom: 20px; }
-        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; }
-
-        .btn {
-            display: inline-block; padding: 12px 30px; border-radius: 50px;
-            text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none;
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
-        .btn-primary { background: var(--secondary-gold); color: var(--primary-blue); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-        /* --- Leaders Section --- */
-        .leaders-section { padding: 80px 0; background: var(--white); }
-        .leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
-        .leader-card { background: var(--light-gray-bg); padding: 40px; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--secondary-gold); display: flex; flex-direction: column; align-items: center; }
-        .leader-img img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--white); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .leader-role { color: var(--secondary-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 1px; }
-        .leader-bio { text-align: justify; font-size: 0.95rem; color: var(--mid-text); }
-
-        /* --- Mentorship Section --- */
-        .mentorship-section { 
-            padding: 100px 0; 
-            background: linear-gradient(rgba(10, 35, 66, 0.92), rgba(10, 35, 66, 0.92)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover; color: white; text-align: center;
+        .navbar-logo img {
+            height: 40px; /* Adjust logo height */
+            margin-right: 10px;
         }
-        .mentorship-content h2 { color: white; margin-bottom: 20px; font-size: 2.5rem; }
-        .mentorship-badge { background: var(--secondary-gold); color: var(--primary-blue); padding: 5px 15px; border-radius: 5px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-
-        /* --- Services --- */
-        .services-section { padding: 80px 0; background: var(--light-gray-bg); }
-        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; list-style: none; padding: 0; }
-        .service-list li { background: var(--white); padding: 20px 20px 20px 45px; border-radius: 8px; position: relative; cursor: pointer; transition: 0.3s; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .service-list li::before { content: '✓'; color: var(--secondary-gold); position: absolute; left: 15px; font-weight: bold; }
-        .service-list li:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        /* --- Modals --- */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
-        .modal-content { background: var(--white); padding: 40px; border-radius: 15px; max-width: 500px; width: 90%; position: relative; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--mid-text); }
+        .navbar-links {
+            display: flex;
+            gap: 25px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: var(--secondary-gold);
+        }
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+        }
         
-        .form-input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
-        .payment-box { background: #f8f9fa; border: 2px dashed var(--primary-blue); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left; }
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding-top: 200px; /* Adjust padding to account for fixed navbar */
+        }
+        
+        .hero-overlay {
+            background-color: rgba(10, 35, 66, 0.85);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-        .footer { background: #111; color: #888; padding: 40px 0; text-align: center; }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-logo {
+            height: 150px; /* Adjust size of the large logo */
+            margin-bottom: 25px;
+        }
 
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- Services Grid Section --- */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--light-gray-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-category h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-list li {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            padding-left: 45px;
+            font-weight: 600;
+            cursor: pointer; /* Added for interactivity */
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: var(--secondary-gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .service-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Signature Services Section --- */
+        .signature-services-section {
+            padding: 80px 0;
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .signature-services-section h2 {
+            color: var(--white);
+        }
+
+        .signature-services-section .section-header h2::after {
+            background-color: var(--secondary-gold);
+        }
+
+        .signature-services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .signature-services-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: background-color 0.3s ease;
+            cursor: pointer; /* Added for interactivity */
+        }
+        
+        .signature-services-list li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .signature-services-list h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-gold);
+        }
+        
+        .signature-services-list p {
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-section .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .contact-section .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .contact-info a:hover {
+            color: var(--secondary-gold);
+        }
+        
+        .contact-section .social-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-section .social-links a {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-section .social-links a:hover {
+            color: var(--secondary-gold);
+        }
+        
+        /* --- Modal Styling --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+        
+        .close-btn {
+            color: var(--dark-text);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #1a1a1a;
+            color: var(--mid-text);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* --- Media Queries --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .navbar-links { display: none; }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            /* Mobile Navigation */
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on navbar height */
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 10px 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 10px 0;
+                border-bottom: 1px solid var(--light-gray-bg);
+            }
+            .navbar-toggle {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--primary-blue);
+            }
         }
     </style>
 </head>
 <body>
-
+    
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <a href="#" class="navbar-logo">
-                <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Logo">
+                <!-- Company logo added here -->
+                <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo">
                 Recruitconnect
             </a>
             <div class="navbar-links">
-                <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#mentorship">Mentorship</a>
+                <a href="#signature-services">Signature Services</a>
                 <a href="#contact">Contact</a>
+            </div>
+            <div class="navbar-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
+    <!-- Header Section (Now just the hero content) -->
     <header class="hero-section">
-        <div class="container hero-content">
-            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" class="hero-logo" alt="Recruitconnect">
-            <h1>Building High-Performing Teams</h1>
-            <p>From strategic recruitment to data-driven HR solutions, we connect organizations with the talent they need to thrive.</p>
-            <a href="#mentorship" class="btn btn-primary">Join Mentorship Class</a>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <!-- Hero section large logo -->
+            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Recruitconnect Logo" class="hero-logo">
+            <h1>Recruitconnect: Your Partner in People Management</h1>
+            <p>From talent acquisition to strategic HR consulting, we provide tailored solutions that drive business growth and build high-performing teams.</p>
+            <a href="#services" class="btn btn-primary">Discover Our Services</a>
         </div>
     </header>
 
     <main>
-        <section class="leaders-section" id="about">
-            <div class="container">
-                <div style="text-align:center; margin-bottom: 50px;">
-                    <h2 style="font-size: 2.5rem;">Meet Our Leaders</h2>
-                    <p>The visionaries shaping the future of recruitment and people operations.</p>
-                </div>
-                <div class="leaders-grid">
-                    <div class="leader-card">
-                        <div class="leader-img">
-                            <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Tiamiyu Oluwaseun Michael">
-                        </div>
-                        <div class="leader-info">
-                            <h3>Tiamiyu Oluwaseun Michael</h3>
-                            <span class="leader-role">Founder & Principal Talent Consultant</span>
-                            <div class="leader-bio">
-                                <p>Tiamiyu Oluwaseun Michael is a Human Resources professional and the Founder of Recruitconnect Nig Ltd. He specializes in building efficient recruitment frameworks that enable organizations to attract and retain high-performing professionals.</p>
-                                <p>With expertise across the full talent acquisition lifecycle—including workforce planning, competency-based interviewing, and onboarding systems—Oluwaseun has a proven track record of aligning talent strategy with organizational objectives for startups and SMEs alike.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="leader-card">
-                        <div class="leader-img">
-                            <img src="https://via.placeholder.com/180" alt="Blessing Nnenna Okorie">
-                        </div>
-                        <div class="leader-info">
-                            <h3>Blessing Nnenna Okorie</h3>
-                            <span class="leader-role">Co-Founder & Lead Data Analyst</span>
-                            <div class="leader-bio">
-                                <p>Blessing Nnenna Okorie is the Co-Founder and technical lead at Recruitconnect. A specialist in <strong>Data Analysis and SQL</strong>, she brings a data-driven approach to human resources and recruitment strategy.</p>
-                                <p>Blessing oversees the integration of workforce analytics into our consulting services, ensuring that hiring decisions are backed by measurable insights. She leads our technical mentorship modules, teaching professionals how to use data to optimize HR performance and business growth.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mentorship-section" id="mentorship">
-            <div class="container">
-                <div class="mentorship-badge">BATCH ENROLLMENT OPEN</div>
-                <h2>HR & Recruitment Mentorship</h2>
-                <p>Join our intensive quarterly program. Master Talent Acquisition, Labor Law compliance, and <strong>Data Analysis using SQL</strong> to advance your HR career.</p>
-                <button class="btn btn-primary" onclick="openMentorshipModal()">Register & Pay Now</button>
-            </div>
-        </section>
-
+        <!-- Services Section -->
         <section class="services-section" id="services">
             <div class="container">
-                <div style="text-align:center; margin-bottom: 40px;">
-                    <h2>Our Core Expertise</h2>
+                <div class="section-header">
+                    <h2>Our Comprehensive Solutions</h2>
+                    <p>We offer a full suite of HR and recruitment services designed to meet the unique needs of your business, from startups to large corporations.</p>
                 </div>
-                <ul class="service-list">
-                    <li onclick="openServiceModal('Executive Search', 'We specialize in headhunting senior-level talent to lead your organization.')">Executive Search & Headhunting</li>
-                    <li onclick="openServiceModal('Mass Recruitment', 'Scalable hiring solutions for logistics, retail, and growing SMEs.')">Mass Recruitment Solutions</li>
-                    <li onclick="openServiceModal('HR Consulting', 'End-to-end setup of HR departments, policy handbooks, and compliance.')">HR Consulting & Advisory</li>
-                    <li onclick="openServiceModal('Data Analytics', 'Leveraging SQL and analytics to drive better hiring and retention decisions.')">HR Data Analytics & SQL Reporting</li>
-                    <li onclick="openServiceModal('Payroll', 'Accurate payroll management ensuring PAYE, Pension, and NSITF compliance.')">Payroll & Outsourcing</li>
-                    <li onclick="openServiceModal('Training', 'Soft skills, leadership development, and workplace etiquette training.')">Training & Development</li>
+
+                <div class="service-category">
+                    <h3>Recruitment & Talent Acquisition</h3>
+                    <ul class="service-list">
+                        <li data-title="Executive Search & Headhunting" data-description="We specialize in sourcing high-performing professionals and senior executives through discreet and strategic headhunting processes tailored to your business needs.">Executive Search & Headhunting</li>
+                        <li data-title="Mass Recruitment for SMEs and Corporates" data-description="Efficient large-scale recruitment solutions designed to help businesses quickly fill multiple roles without compromising on quality.">Mass Recruitment for SMEs and Corporates</li>
+                        <li data-title="Temporary & Contract Staffing Solutions" data-description="Flexible staffing options to meet short-term project needs, maternity cover, or peak business periods with qualified, vetted professionals.">Temporary & Contract Staffing Solutions</li>
+                        <li data-title="Outsourced Recruitment Services (RPO)" data-description="Let us handle your entire hiring process from sourcing to onboarding, while you focus on growing your business.">Outsourced Recruitment Services (RPO)</li>
+                        <li data-title="Internship & Graduate Trainee Placement Programs" data-description="We design and manage internship and graduate programs that help organizations develop future talent while supporting youth employment.">Internship & Graduate Trainee Placement Programs</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>HR Consulting & Advisory</h3>
+                    <ul class="service-list">
+                        <li data-title="HR Department Setup for Startups & SMEs" data-description="From scratch, we help build your HR foundation—including structures, roles, and compliance systems tailored to your business stage.">HR Department Setup for Startups & SMEs</li>
+                        <li data-title="HR Policy & Employee Handbook Development" data-description="Custom HR policies and handbooks that align with Nigerian labor law and your company culture, ensuring clarity and consistency across your workforce.">HR Policy & Employee Handbook Development</li>
+                        <li data-title="HR Audits & Compliance Checks" data-description="We assess your current HR practices and identify gaps to ensure alignment with labor laws, tax obligations, and internal governance.">HR Audits & Compliance Checks</li>
+                        <li data-title="Organizational Restructuring & Change Management" data-description="Support during periods of transition—whether downsizing, scaling, or restructuring—to minimize disruption and maintain employee morale.">Organizational Restructuring & Change Management</li>
+                        <li data-title="HR Technology Advisory (HRIS/Payroll Systems)" data-description="Guidance on selecting and implementing the right HR software tools (HRIS, payroll systems, etc.) that improve efficiency and accuracy.">HR Technology Advisory (HRIS/Payroll Systems)</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Training & Development</h3>
+                    <ul class="service-list">
+                        <li data-title="Soft Skills Training" data-description="Enhance your team’s communication, teamwork, adaptability, and emotional intelligence to build a more collaborative workplace.">Soft Skills Training (Communication, Teamwork, Emotional Intelligence, etc.)</li>
+                        <li data-title="Leadership & Management Development Programs" data-description="Equip current and future leaders with practical tools for effective people and project management.">Leadership & Management Development Programs</li>
+                        <li data-title="Workplace Etiquette & Customer Service Training" data-description="Foster professionalism and improve customer experience through structured etiquette and service delivery workshops.">Workplace Etiquette & Customer Service Training</li>
+                        <li data-title="Employee Onboarding & Induction Programs" data-description="Ensure new hires integrate seamlessly with your company culture and operations through structured onboarding programs.">Employee Onboarding & Induction Programs</li>
+                        <li data-title="Train-the-Trainer Programs" data-description="Build internal training capacity by equipping selected employees with skills to train others effectively.">Train-the-Trainer Programs</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Performance & People Management</h3>
+                    <ul class="service-list">
+                        <li data-title="Performance Management System Setup & Reviews" data-description="We help implement or revamp your appraisal systems to align employee goals with business objectives.">Performance Management System Setup & Reviews</li>
+                        <li data-title="KPI Design & Implementation" data-description="Custom Key Performance Indicators (KPIs) that reflect role-specific metrics and enable fair and measurable evaluation.">KPI Design & Implementation</li>
+                        <li data-title="Employee Engagement & Satisfaction Surveys" data-description="Gather honest employee feedback through surveys and use insights to improve morale, retention, and productivity.">Employee Engagement & Satisfaction Surveys</li>
+                        <li data-title="Career Pathing & Succession Planning" data-description="We work with you to map employee growth paths and identify high-potential talent for future leadership roles.">Career Pathing & Succession Planning</li>
+                        <li data-title="Conflict Resolution & Disciplinary Advisory" data-description="Professional guidance on resolving workplace conflicts and managing disciplinary procedures in line with best practice and local law.">Conflict Resolution & Disciplinary Advisory</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Payroll & Outsourcing Services</h3>
+                    <ul class="service-list">
+                        <li data-title="Payroll Processing & Compliance" data-description="We handle end-to-end payroll processing and ensure compliance with all statutory obligations—accurately and on time.">Payroll Processing & Compliance (PAYE, Pension, NSITF, etc.)</li>
+                        <li data-title="Employee Benefits Administration" data-description="Management of health insurance, pensions, leave, and other benefits to keep your workforce satisfied and compliant.">Employee Benefits Administration</li>
+                        <li data-title="Full HR Outsourcing" data-description="Focus on your core business while we manage HR operations, from recruitment and onboarding to employee management and offboarding.">Full HR Outsourcing (You manage HR while clients focus on core business)</li>
+                        <li data-title="Staff Verification & Background Checks" data-description="Thorough checks to confirm the credibility of your hires—covering employment history, criminal records, guarantor verification, and more.">Staff Verification & Background Checks</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>Business Support Services</h3>
+                    <ul class="service-list">
+                        <li data-title="Job Description Development & Review" data-description="Clear and compliant job descriptions tailored to reflect actual roles, aiding in recruitment, performance review, and legal clarity.">Job Description Development & Review</li>
+                        <li data-title="Organizational Structure & Chart Design" data-description="We design lean and scalable organizational structures that support business growth and clear reporting lines.">Organizational Structure & Chart Design</li>
+                        <li data-title="HR Data Analytics & Reporting" data-description="Leverage data to make informed HR decisions with analytics on turnover, performance, absenteeism, and more.">HR Data Analytics & Reporting</li>
+                        <li data-title="Virtual HR Services for Remote Companies" data-description="We provide outsourced HR services to virtual/remote teams—covering recruitment, onboarding, and employee support.">Virtual HR Services for Remote Companies</li>
+                        <li data-title="Support with Labour Law Compliance & Dispute Resolution" data-description="Ensure alignment with labor laws and receive expert guidance on managing internal disputes and external claims.">Support with Labour Law Compliance & Dispute Resolution</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Signature Services Section -->
+        <section class="signature-services-section" id="signature-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recruitconnect Signature Services</h2>
+                    <p>Our unique offerings provide specialized solutions for both businesses and job seekers, setting us apart in the industry.</p>
+                </div>
+                <ul class="signature-services-list">
+                    <li data-title="RecruitReady" data-description="One-on-one coaching to help job seekers craft compelling CVs, prepare for interviews, and position themselves confidently in the job market.">
+                        <h4>“RecruitReady”</h4>
+                        <p>CV & Interview Preparation Coaching for Job Seekers</p>
+                    </li>
+                    <li data-title="ConnectPro" data-description="Affordable monthly HR support plans tailored for startups and SMEs needing consistent HR support without a full-time team.">
+                        <h4>“ConnectPro”</h4>
+                        <p>Business HR subscription packages for small businesses</p>
+                    </li>
+                    <li data-title="HireFast" data-description="Rapid hiring service designed to fill urgent roles within 48 hours—without sacrificing quality or process integrity.">
+                        <h4>“HireFast”</h4>
+                        <p>48-hour recruitment turnaround for urgent roles</p>
+                    </li>
                 </ul>
             </div>
         </section>
 
-        <footer class="footer" id="contact" style="background: var(--primary-blue); color: white;">
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
             <div class="container">
-                <h2 style="color: white; margin-bottom: 30px;">Get In Touch</h2>
-                <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:Recruit_Connect@outlook.com" style="color: white; text-decoration: none;">Recruit_Connect@outlook.com</a></p>
-                <div style="margin-top: 25px;">
-                    <a href="https://wa.me/2349025427977" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/Recruit_Connect01" target="_blank" style="color: white; font-size: 1.8rem; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you. Reach out to us through any of our channels below.</p>
                 </div>
-                <p style="margin-top: 50px; font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Recruitconnect Nig Ltd. All rights reserved.</p>
+                <div class="contact-info">
+                    <!-- Phone Numbers -->
+                    <p><i class="fas fa-phone-alt"></i> 07060432373 | 08028230847</p>
+                    <!-- Email -->
+                    <p><a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i> Recruit_Connect@outlook.com</a></p>
+                    <!-- WhatsApp -->
+                    <p><a href="https://wa.me/2349025427977" target="_blank"><i class="fab fa-whatsapp"></i> 09025427977</a></p>
+                    <div class="social-links">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/Recruit_Connect01" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <!-- TikTok link updated with the correct handle -->
+                        <a href="https://www.tiktok.com/@recruitconnect.ni" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <!-- LinkedIn link confirmed with the correct company name -->
+                        <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </section>
     </main>
 
-    <div id="mentorship-modal" class="modal">
-        <div class="modal-content" id="reg-step-1">
-            <span class="close-btn" onclick="closeMentorshipModal()">&times;</span>
-            <h3 style="margin-top: 0;">Register for Mentorship</h3>
-            <p style="font-size: 0.9rem; color: var(--mid-text);">Submit your details to proceed to the payment page.</p>
-            <form onsubmit="event.preventDefault(); showPaymentStep();">
-                <input type="text" placeholder="Full Name" required class="form-input">
-                <input type="email" placeholder="Email Address" required class="form-input">
-                <input type="tel" placeholder="WhatsApp Phone Number" required class="form-input">
-                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Proceed to Payment</button>
-            </form>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Recruitconnect. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="modal-content" id="reg-step-2" style="display:none; text-align:center;">
-            <span class="close-btn" onclick="closeMentorshipModal()">&times;</span>
-            <i class="fas fa-check-circle" style="font-size: 3.5rem; color: #2ecc71; margin-bottom: 15px;"></i>
-            <h3>Form Submitted!</h3>
-            <p>Please complete your registration by making payment to the account below:</p>
-            <div class="payment-box">
-                <p><strong>Bank:</strong> [Your Bank Name]</p>
-                <p><strong>Account Name:</strong> Recruitconnect Nig Ltd</p>
-                <p><strong>Account Number:</strong> [Your Account Number]</p>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--mid-text); margin-bottom: 20px;">After payment, click the button below to share your receipt with our Admins for confirmation.</p>
-            <a href="https://wa.me/2349025427977?text=Hi%20Admin,%20I%20have%20completed%20the%20registration%20form%20for%20the%20Mentorship%20Class.%20Here%20is%20my%20payment%20receipt." target="_blank" class="btn" style="background: var(--whatsapp-green); color: white; width: 100%; border-radius: 8px;">
-                <i class="fab fa-whatsapp"></i> Share Receipt to Admin
-            </a>
-        </div>
-    </div>
-
-    <div id="info-modal" class="modal">
+    <!-- The Modal -->
+    <div id="service-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('info-modal').style.display='none'">&times;</span>
+            <span class="close-btn">&times;</span>
             <h3 id="modal-title"></h3>
-            <p id="modal-desc"></p>
+            <p id="modal-description"></p>
         </div>
     </div>
-
+    
+    <!-- JavaScript for Mobile Menu Toggle and Modal -->
     <script>
-        function openMentorshipModal() {
-            document.getElementById('mentorship-modal').style.display = 'flex';
-            document.getElementById('reg-step-1').style.display = 'block';
-            document.getElementById('reg-step-2').style.display = 'none';
-        }
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-links').classList.toggle('active');
+        });
 
-        function closeMentorshipModal() {
-            document.getElementById('mentorship-modal').style.display = 'none';
-        }
+        // Get the modal
+        const modal = document.getElementById('service-modal');
 
-        function showPaymentStep() {
-            document.getElementById('reg-step-1').style.display = 'none';
-            document.getElementById('reg-step-2').style.display = 'block';
-        }
+        // Get the <span> element that closes the modal
+        const closeBtn = document.querySelector('.close-btn');
 
-        function openServiceModal(title, desc) {
+        // Function to open the modal with specific content
+        function openModal(title, description) {
             document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('info-modal').style.display = 'flex';
+            document.getElementById('modal-description').innerText = description;
+            modal.style.display = 'flex';
         }
 
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = 'none';
+        // Add event listeners to all service list items
+        const serviceItems = document.querySelectorAll('.service-list li, .signature-services-list li');
+        serviceItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description');
+                openModal(title, description);
+            });
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
             }
-        }
+        });
     </script>
 </body>
 </html>
