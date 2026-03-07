@@ -101,8 +101,8 @@
     <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Logo" class="hero-logo">
     <h1>Helping Businesses Hire the Right Talent Faster</h1>
     <p>Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.</p>
-    <a href="#form" class="btn btn-primary">Submit Recruitment Request</a>
-    <a href="#services" class="btn btn-primary">Hire Talent</a>
+   <a href="#services" class="btn btn-primary" id="hire-talent-btn">Hire Talent</a>
+<a href="#recruitment-form" class="btn btn-primary">Submit Recruitment Request</a>
   </div>
 </header>
 
@@ -187,6 +187,12 @@
   document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
     document.querySelector('.navbar-links').classList.toggle('active');
   });
+
+    // Smooth scroll for Hire Talent button
+document.getElementById('hire-talent-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+});
 
   function handleFormSubmit(e){
     e.preventDefault();
