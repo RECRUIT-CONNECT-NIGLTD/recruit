@@ -50,24 +50,35 @@
         .navbar-links a:hover { color: var(--secondary-gold); }
 
         /* --- Hero Section --- */
-    .hero-section {
+   .hero-section {
     position: relative;
     padding: 220px 0 160px;
-    color: var(--white);
+    color: #fff;
     text-align: center;
-    background: 
-        linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.6)), /* stronger blue overlay for professional look */
-        url('https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/237e8d54-3795-443a-b268-25f9bc60d010.png?raw=true') no-repeat center center;
+    background: url('https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/237e8d54-3795-443a-b268-25f9bc60d010.png?raw=true') no-repeat center center;
     background-size: cover;
     overflow: hidden;
 }
 
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, rgba(10,35,66,0.8), rgba(10,35,66,0.6), rgba(10,35,66,0.8));
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 10; }
+
 .hero-section h1 {
-    color: #FFFFFF;
+    color: #fff;
     font-size: 3.2rem;
     font-weight: 800;
     margin-bottom: 20px;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.4); /* subtle shadow for text readability */
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
 .hero-section p {
@@ -75,7 +86,14 @@
     max-width: 800px;
     margin: 0 auto 40px;
     opacity: 0.95;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* subtle shadow for paragraph */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Animated Gradient Keyframes */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
         /* --- Buttons --- */
