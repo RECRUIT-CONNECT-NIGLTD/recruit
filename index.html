@@ -467,13 +467,27 @@
         <section class="why-section">
             <div class="container">
                 <div class="section-header"><h2>Why Recruitconnect?</h2></div>
-                <ul class="why-list">
-                    <li class="why-item"><i class="fas fa-check-circle"></i> Fast Turnaround Hiring</li>
-                    <li class="why-item"><i class="fas fa-check-circle"></i> Pre-screened Qualified Candidates</li>
-                    <li class="why-item"><i class="fas fa-check-circle"></i> Cost-effective Recruitment</li>
-                    <li class="why-item"><i class="fas fa-check-circle"></i> Industry-Focused Hiring (Logistics, Tech, Sales, Admin e.t.c)</li>
-                    <li class="why-item"><i class="fas fa-check-circle"></i> Flexible Recruitment Plans</li>
-                </ul>
+            <ul class="why-list">
+    <li class="why-item" data-title="Fast Turnaround Hiring" data-description="At Recruitconnect, we understand that vacant positions can slow down business operations. Our recruitment process is designed to deliver qualified candidates within a short timeframe through proactive talent sourcing, an active candidate database, and streamlined screening processes. We work closely with employers to clearly understand role requirements and quickly identify the most suitable candidates, helping organizations reduce downtime and maintain productivity.">
+        <i class="fas fa-check-circle"></i> Fast Turnaround Hiring
+    </li>
+    <li class="why-item" data-title="Pre-screened Qualified Candidates" data-description="We do more than just send CVs. Every candidate presented by Recruitconnect goes through a structured screening process including resume evaluation, initial interviews, skills assessment, and background verification. This ensures employers only get candidates who meet the required qualifications, experience level, and cultural fit.">
+        <i class="fas fa-check-circle"></i> Pre-screened Qualified Candidates
+    </li>
+    <li class="why-item" data-title="Cost-effective Recruitment" data-description="Recruiting internally can consume time, resources, and operational costs. Recruitconnect provides an affordable recruitment solution, reducing hiring costs, minimizing bad hires, and improving long-term employee retention.">
+        <i class="fas fa-check-circle"></i> Cost-effective Recruitment
+    </li>
+    <li class="why-item" data-title="Industry-Focused Hiring" data-description="Recruitconnect specializes in sourcing talent for key industries including logistics, technology, sales, administration, customer service, and other business support roles. By focusing on specific industries, we ensure businesses get professionals who can quickly adapt and perform.">
+        <i class="fas fa-check-circle"></i> Industry-Focused Hiring (Logistics, Tech, Sales, Admin e.t.c)
+    </li>
+    <li class="why-item" data-title="Flexible Recruitment Plans" data-description="Every organization has different hiring needs. Recruitconnect offers flexible recruitment solutions that can be tailored to suit startups, small businesses, and growing organizations. Whether you need to hire for a single role or multiple positions, our recruitment plans provide scalable support while maintaining high hiring standards.">
+        <i class="fas fa-check-circle"></i> Flexible Recruitment Plans
+    </li>
+</ul>
+
+
+
+                
             </div>
         </section>
 
@@ -656,7 +670,7 @@ function closeMentorshipModal() {
 }
         // Service Modal Logic
         const sModal = document.getElementById('service-modal');
-        document.querySelectorAll('.service-list li, .signature-card').forEach(item => {
+        document.querySelectorAll('.service-list li, .signature-card, .why-item').forEach(item => {
             item.onclick = function() {
                 const title = this.getAttribute('data-title');
                 const desc = this.getAttribute('data-description');
