@@ -1,406 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recruitconnect Nig Ltd | Premier HR & Recruitment Solutions</title>
-    <meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
-    <meta name="description" content="Recruitconnect Nig Ltd offers professional HR consulting, talent acquisition, payroll management, and mentorship programs across Nigeria.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        /* --- Root Variables & Reset --- */
-        :root {
-            --primary-blue: #0A2342;
-            --secondary-gold: #FFB703;
-            --light-gray-bg: #F4F7F9;
-            --dark-text: #333333;
-            --mid-text: #666666;
-            --white: #FFFFFF;
-            --accent-blue: #163e6e;
-            --whatsapp-green: #25D366;
-            --transition: all 0.3s ease;
-        }
+<title>Recruitconnect | HR & Recruitment Solutions</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; color: var(--dark-text); line-height: 1.6; background-color: var(--white); scroll-behavior: smooth; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-        a { text-decoration: none; transition: var(--transition); }
-        ul { list-style: none; }
+<meta name="google-site-verification" content="g5O-PTeDiUkX2Uq8PbYr0sMtP_mHqt07pHKrO93Q5yg" />
 
-        /* --- Typography --- */
-        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--primary-blue); font-weight: 700; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.6rem; margin-bottom: 15px; position: relative; }
-        .section-header h2::after { content: ''; width: 60px; height: 4px; background-color: var(--secondary-gold); position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); }
+<meta name="description"
+content="Recruitconnect offers comprehensive HR and recruitment services including talent acquisition, HR consulting, training, and payroll management.">
 
-        /* --- Navigation --- */
-        .navbar { background-color: var(--white); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; left: 0; z-index: 2000; }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .navbar-logo { display: flex; align-items: center; font-size: 1.6rem; color: var(--primary-blue); font-weight: 800; }
-        .navbar-logo img { height: 45px; margin-right: 12px; border-radius: 4px; }
-        .navbar-links { display: flex; gap: 25px; }
-        .navbar-links a { color: var(--primary-blue); font-weight: 600; font-size: 0.95rem; }
-        .navbar-links a:hover { color: var(--secondary-gold); }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-        /* --- Hero Section --- */
-        .hero-section {
-            position: relative;
-            padding: 240px 0 180px;
-            color: var(--white);
-            text-align: center;
-            background: radial-gradient(circle at top right, var(--accent-blue), var(--primary-blue));
-            overflow: hidden;
-        }
-        .hero-section::before {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 183, 3, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 183, 3, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .hero-content { position: relative; z-index: 10; }
-        .hero-logo { height: 140px; margin-bottom: 25px; filter: drop-shadow(0 4px 15px rgba(0,0,0,0.4)); }
-        .hero-section h1 { color: var(--white); font-size: 3.5rem; line-height: 1.2; margin-bottom: 25px; }
-        .hero-section p { font-size: 1.35rem; max-width: 850px; margin: 0 auto 45px; opacity: 0.9; font-weight: 300; }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        /* --- Button System --- */
-        .hero-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .btn { padding: 16px 32px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
-        .btn-gold { background: var(--secondary-gold); color: var(--primary-blue); box-shadow: 0 5px 15px rgba(255,183,3,0.4); }
-        .btn-outline { background: transparent; border: 2px solid var(--secondary-gold); color: var(--secondary-gold); }
-        .btn-white-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0.95; }
+<style>
 
-        /* --- Form & Modal Design --- */
-        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(5, 13, 24, 0.9); align-items: center; justify-content: center; backdrop-filter: blur(10px); padding: 20px; }
-        .modal-content { background: var(--white); padding: 50px; border-radius: 25px; max-width: 900px; width: 100%; position: relative; max-height: 92vh; overflow-y: auto; }
-        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 2.5rem; cursor: pointer; color: var(--primary-blue); opacity: 0.5; }
-        .close-btn:hover { opacity: 1; }
+:root{
+--primary-blue:#0A2342;
+--secondary-gold:#FFB703;
+--light-gray-bg:#F4F7F9;
+--dark-text:#333333;
+--mid-text:#666666;
+--white:#FFFFFF;
+--accent-blue:#163e6e;
+}
 
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .form-group { display: flex; flex-direction: column; text-align: left; }
-        .form-group label { font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; color: var(--primary-blue); }
-        .form-group input, .form-group textarea, .form-group select { padding: 14px; border: 2px solid #edf2f7; border-radius: 10px; font-family: inherit; font-size: 1rem; transition: var(--transition); }
-        .form-group input:focus { border-color: var(--secondary-gold); outline: none; }
-        .full-width { grid-column: span 2; }
-        .form-title { margin: 35px 0 15px; padding-bottom: 10px; border-bottom: 2px solid var(--light-gray-bg); font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
-        
-        .radio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
-        .radio-item { display: flex; align-items: center; gap: 10px; background: var(--light-gray-bg); padding: 12px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
-        .radio-item input { width: 18px; height: 18px; }
+body{
+font-family:'Lato',sans-serif;
+margin:0;
+color:var(--dark-text);
+}
 
-        /* --- Payment Information --- */
-        .payment-card { background: var(--primary-blue); color: var(--white); padding: 35px; border-radius: 15px; margin-top: 30px; text-align: center; border: 2px dashed var(--secondary-gold); }
-        .payment-card h3 { color: var(--secondary-gold); margin-bottom: 10px; }
-        .whatsapp-link { background: var(--whatsapp-green); color: white; padding: 15px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; margin-top: 20px; }
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
 
-        /* --- Sections Styles --- */
-        .services-section { padding: 120px 0; background-color: var(--white); }
-        .service-category { margin-bottom: 50px; }
-        .service-category h3 { margin-bottom: 25px; font-size: 1.6rem; color: var(--primary-blue); padding-left: 15px; border-left: 5px solid var(--secondary-gold); }
-        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .service-list li { background: var(--light-gray-bg); padding: 25px 25px 25px 55px; border-radius: 12px; position: relative; font-weight: 700; border: 1px solid transparent; cursor: pointer; }
-        .service-list li::before { content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 20px; color: var(--secondary-gold); font-size: 1.2rem; }
-        .service-list li:hover { border-color: var(--secondary-gold); background: var(--white); box-shadow: 0 10px 25px rgba(0,0,0,0.05); transform: translateY(-5px); }
+h1,h2,h3,h4{
+font-family:'Poppins',sans-serif;
+color:var(--primary-blue);
+}
 
-        /* --- Leaders Section (Expanded) --- */
-        .leaders-section { padding: 120px 0; background: var(--light-gray-bg); }
-        .leader-card { background: var(--white); padding: 50px; border-radius: 30px; margin-bottom: 50px; display: flex; align-items: center; gap: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
-        .leader-img { width: 300px; height: 380px; border-radius: 20px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.2); flex-shrink: 0; }
-        .leader-role { color: var(--secondary-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; display: block; }
-        .leader-bio p { margin-bottom: 18px; color: var(--mid-text); font-size: 1.05rem; text-align: justify; }
+.section-header{
+text-align:center;
+margin-bottom:50px;
+}
 
-        /* --- Footer & Misc --- */
-        .footer { background: #050d18; color: #aab2bd; padding: 80px 0; text-align: center; }
-        .footer-logo { height: 60px; margin-bottom: 30px; }
-        .social-links { display: flex; justify-content: center; gap: 30px; margin: 40px 0; }
-        .social-links a { font-size: 2rem; color: var(--white); }
-        .social-links a:hover { color: var(--secondary-gold); transform: scale(1.2); }
+.section-header h2{
+font-size:2.5rem;
+}
 
-        #backToTopBtn { display: none; position: fixed; bottom: 40px; right: 40px; z-index: 1000; background: var(--secondary-gold); color: var(--primary-blue); border: none; padding: 20px; border-radius: 50%; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.navbar{
+background:white;
+padding:15px 0;
+position:fixed;
+top:0;
+width:100%;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+z-index:1000;
+}
 
-        /* Mobile Adjustments */
-        @media (max-width: 992px) {
-            .leader-card { flex-direction: column; text-align: center; padding: 30px; }
-            .leader-img { width: 100%; max-width: 280px; height: 350px; }
-            .hero-section h1 { font-size: 2.6rem; }
-            .navbar-links { display: none; }
-        }
-    </style>
+.navbar .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar-links a{
+margin-left:20px;
+text-decoration:none;
+font-weight:600;
+color:var(--primary-blue);
+}
+
+.hero-section{
+padding:220px 0 160px;
+background:radial-gradient(circle at top right,var(--accent-blue),var(--primary-blue));
+color:white;
+text-align:center;
+}
+
+.hero-section h1{
+font-size:3.2rem;
+color:white;
+}
+
+.hero-section p{
+font-size:1.3rem;
+max-width:800px;
+margin:auto;
+}
+
+.btn{
+padding:14px 35px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+border:none;
+}
+
+.btn-gold{
+background:var(--secondary-gold);
+color:var(--primary-blue);
+}
+
+.btn-outline{
+border:2px solid var(--secondary-gold);
+color:var(--secondary-gold);
+background:none;
+}
+
+.modal{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:4000;
+}
+
+.modal-content{
+background:white;
+padding:40px;
+border-radius:15px;
+max-width:850px;
+width:100%;
+}
+
+.close-btn{
+font-size:2rem;
+cursor:pointer;
+float:right;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group input,select,textarea{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.full-width{
+grid-column:span 2;
+}
+
+.checkbox-group{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.footer{
+background:#050d18;
+color:#777;
+text-align:center;
+padding:60px 0;
+}
+
+</style>
 </head>
+
 <body>
 
-    <button onclick="topFunction()" id="backToTopBtn"><i class="fas fa-chevron-up"></i></button>
+<nav class="navbar">
+<div class="container">
+<strong>Recruitconnect</strong>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="navbar-logo">
-                <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" alt="Logo">
-                Recruitconnect
-            </a>
-            <div class="navbar-links">
-                <a href="#services">Services</a>
-                <a href="#about">Our Leaders</a>
-                <a href="#" onclick="openModal('mentorshipModal')">Mentorship</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+<div class="navbar-links">
+<a href="#services">Services</a>
+<a href="#signature">Signature</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
 
-    <header class="hero-section">
-        <div class="hero-content container">
-            <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" class="hero-logo">
-            <h1>Expert HR Strategies for the Modern Workforce.</h1>
-            <p>We bridge the gap between top-tier talent and visionary companies across Nigeria. From recruitment to strategic HR consulting, we are your growth partners.</p>
-            <div class="hero-btns">
-                <button onclick="openModal('hireTalentModal')" class="btn btn-gold"><i class="fas fa-user-plus"></i> Hire a Talent</button>
-                <a href="#recruitment-form-section" class="btn btn-outline"><i class="fas fa-file-contract"></i> Submit Request</a>
-                <button onclick="openModal('mentorshipModal')" class="btn btn-white-outline"><i class="fas fa-graduation-cap"></i> Join Mentorship</button>
-            </div>
-        </div>
-    </header>
+<header class="hero-section">
 
-    <div id="hireTalentModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('hireTalentModal')">&times;</span>
-            <div class="section-header"><h2>Talent Acquisition Request</h2></div>
-            <form action="https://formspree.io/f/mdawagrd" method="POST">
-                
-                <h3 class="form-title"><i class="fas fa-building"></i> Company Information</h3>
-                <div class="form-grid">
-                    <div class="form-group"><label>Company Name</label><input type="text" name="Company_Name" required placeholder="e.g. Recruitconnect Nig Ltd"></div>
-                    <div class="form-group"><label>Contact Person</label><input type="text" name="Contact_Person" required></div>
-                    <div class="form-group"><label>Email Address</label><input type="email" name="Email" required></div>
-                    <div class="form-group"><label>Phone Number</label><input type="tel" name="Phone" required></div>
-                    <div class="form-group full-width"><label>Office Address</label><input type="text" name="Office_Address"></div>
-                </div>
+<div class="container">
 
-                <h3 class="form-title"><i class="fas fa-briefcase"></i> Job Requirements</h3>
-                <div class="form-grid">
-                    <div class="form-group"><label>Job Title to Fill</label><input type="text" name="Job_Title" required></div>
-                    <div class="form-group"><label>Number of Positions</label><input type="number" name="Quantity" required min="1"></div>
-                    <div class="form-group"><label>Work Mode</label>
-                        <select name="Work_Mode">
-                            <option value="On-site">On-site</option>
-                            <option value="Remote">Remote</option>
-                            <option value="Hybrid">Hybrid</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><label>Experience Level</label>
-                        <select name="Experience_Level">
-                            <option value="Entry">Entry Level (0-2 years)</option>
-                            <option value="Mid">Mid Level (3-5 years)</option>
-                            <option value="Senior">Senior Level (6+ years)</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width"><label>Key Responsibilities & Skills</label><textarea name="Key_Skills" rows="4" placeholder="List core skills or upload JD..."></textarea></div>
-                    <div class="form-group full-width"><label>Salary Budget (Monthly)</label><input type="text" name="Salary" placeholder="e.g. 150,000 - 200,000 NGN"></div>
-                </div>
+<h1>Helping Businesses Hire the Right Talent Faster.</h1>
 
-                <button type="submit" class="btn btn-gold" style="width:100%; margin-top:30px; height:60px;">Submit Hiring Request</button>
-            </form>
-        </div>
-    </div>
+<p>
+Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions
+for startups, SMEs, and growing organizations across Nigeria.
+</p>
 
-    <div id="mentorshipModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('mentorshipModal')">&times;</span>
-            <div class="section-header">
-                <h4 style="color:var(--secondary-gold); margin-bottom:10px;">SCHOLARSHIP PROGRAM</h4>
-                <h2>Mentorship Registration</h2>
-            </div>
-            
-            <form action="https://formspree.io/f/mdawagrd" method="POST">
-                <h3 class="form-title"><i class="fas fa-user-circle"></i> Applicant Details</h3>
-                <div class="form-grid">
-                    <div class="form-group full-width"><label>Full Name</label><input type="text" name="Full_Name" required></div>
-                    <div class="form-group"><label>Phone Number (WhatsApp)</label><input type="tel" name="WhatsApp_Phone" required></div>
-                    <div class="form-group"><label>Alternative Phone</label><input type="tel" name="Alt_Phone"></div>
-                    <div class="form-group"><label>Email Address</label><input type="email" name="Email" required></div>
-                    <div class="form-group"><label>Gender</label>
-                        <select name="Gender" required>
-                            <option value="">Select Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width"><label>Current Location (State/City)</label><input type="text" name="Location" required></div>
-                </div>
+<div style="margin-top:30px">
 
-                <h3 class="form-title"><i class="fas fa-book-open"></i> Course Selection</h3>
-                <div class="form-group">
-                    <label>Which mentorship class are you enrolling for?</label>
-                    <div class="radio-grid">
-                        <label class="radio-item"><input type="radio" name="Program" value="HR Mentorship" required> HR Mentorship (#12,000)</label>
-                        <label class="radio-item"><input type="radio" name="Program" value="Data Analytics"> Data Analytics (#15,000)</label>
-                    </div>
-                </div>
+<button onclick="openHireModal()" class="btn btn-gold">
+Hire a Talent
+</button>
 
-                <h3 class="form-title"><i class="fas fa-clock"></i> Commitment Check</h3>
-                <div class="form-grid">
-                    <div class="form-group"><label>Can you attend Sat/Sun (6PM - 8PM)?</label>
-                        <select name="Availability" required>
-                            <option value="Yes">Yes, I am available</option>
-                            <option value="No">No, I have conflicts</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><label>Do you commit to full participation?</label>
-                        <select name="Commitment" required>
-                            <option value="Yes">Yes, I am committed</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                </div>
+<a href="#recruitment-request" class="btn btn-outline">
+Submit Recruitment Request
+</a>
 
-                <h3 class="form-title"><i class="fas fa-bullhorn"></i> How did you hear about us?</h3>
-                <div class="radio-grid">
-                    <label class="radio-item"><input type="radio" name="Source" value="WhatsApp"> WhatsApp</label>
-                    <label class="radio-item"><input type="radio" name="Source" value="LinkedIn"> LinkedIn</label>
-                    <label class="radio-item"><input type="radio" name="Source" value="Facebook"> Facebook</label>
-                    <label class="radio-item"><input type="radio" name="Source" value="Instagram"> Instagram</label>
-                    <label class="radio-item"><input type="radio" name="Source" value="Tiktok"> Tiktok</label>
-                    <label class="radio-item"><input type="radio" name="Source" value="Referral"> Referral</label>
-                </div>
+</div>
 
-                <div class="payment-card">
-                    <h3>Secure Your Spot</h3>
-                    <p>Bank: <strong>Palmpay</strong></p>
-                    <p>Account Number: <strong>8164475510</strong></p>
-                    <p>Account Name: <strong>Okorie Nnenna Blessing</strong></p>
-                    <a href="https://wa.me/2349025427977" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Send Payment Receipt via WhatsApp</a>
-                </div>
+</div>
+</header>
 
-                <button type="submit" class="btn btn-gold" style="width:100%; margin-top:30px; height:60px;">Complete Registration</button>
-            </form>
-        </div>
-    </div>
 
-    <main>
-        <section class="services-section" id="services">
-            <div class="container">
-                <div class="section-header"><h2>Our Specialized Services</h2></div>
-                
-                <div class="service-category">
-                    <h3>Recruitment & Strategic Sourcing</h3>
-                    <ul class="service-list">
-                        <li onclick="alert('Tailored headhunting for high-level management roles.')">Executive Search & Headhunting</li>
-                        <li>Mass Recruitment for SMEs & Corporates</li>
-                        <li>Contract & Project-Based Staffing</li>
-                        <li>Graduate Trainee Program Management</li>
-                        <li>Recruitment Process Outsourcing (RPO)</li>
-                    </ul>
-                </div>
+<!-- HIRE TALENT MODAL -->
 
-                <div class="service-category" style="margin-top:60px;">
-                    <h3>HR Consulting & Outsourcing</h3>
-                    <ul class="service-list">
-                        <li>HR Policy & Employee Handbook Development</li>
-                        <li>Payroll Processing & Statutory Compliance</li>
-                        <li>Performance Management Systems</li>
-                        <li>HR Audit & Compliance Checks</li>
-                        <li>Learning & Development Workshops</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<div id="hireTalentModal" class="modal">
 
-        <section class="leaders-section" id="about">
-            <div class="container">
-                <div class="section-header"><h2>Meet Our Leadership Team</h2></div>
-                
-                <div class="leader-card">
-                    <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/Founder%20image.jpeg" class="leader-img">
-                    <div class="leader-info">
-                        <h3>Tiamiyu Oluwaseun Michael</h3>
-                        <span class="leader-role">Founder & Principal Talent Consultant</span>
-                        <div class="leader-bio">
-                            <p>Tiamiyu Oluwaseun Michael is a Human Resources professional and the visionary Founder of Recruitconnect Nig Ltd. He specializes in building efficient recruitment frameworks that enable businesses to scale by acquiring the right human capital.</p>
-                            <p>With years of expertise across the full talent acquisition lifecycle—including workforce planning, sourcing strategies, and performance management—he has successfully implemented structured hiring processes for various startups and established SMEs.</p>
-                        </div>
-                    </div>
-                </div>
+<div class="modal-content">
 
-                <div class="leader-card">
-                    <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/co-founder%20image.jpeg" class="leader-img">
-                    <div class="leader-info">
-                        <h3>Blessing Nnenna Okorie</h3>
-                        <span class="leader-role">Co-Founder & Lead HR Strategist</span>
-                        <div class="leader-bio">
-                            <p>Blessing Okorie is a seasoned Human Resources professional with over five years of experience in building strong HR systems and fostering productive workplace cultures. She holds a Bachelor’s degree in Economics from Ambrose Alli University and is currently concluding her MBA at Ahmadu Bello University.</p>
-                            <p>She began her professional career in administration, serving as an Administrative Manager for three years before transitioning fully into HR. Her development includes specialized expertise in recruitment, onboarding, and employee relations.</p>
-                            <p>Blessing is a certified Professional in Human Resources – International (PHRi). She is deeply passionate about creating structured HR processes and enhancing the employee experience for high-performing teams.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<span class="close-btn" onclick="closeHireModal()">&times;</span>
 
-        <section id="recruitment-form-section" style="padding:120px 0; background:var(--primary-blue); color:white;">
-            <div class="container">
-                <div class="section-header"><h2 style="color:white;">Submit a Recruitment Request</h2></div>
-                <div style="background:white; color:var(--dark-text); padding:50px; border-radius:20px; max-width:800px; margin:0 auto;">
-                    <form action="https://formspree.io/f/mdawagrd" method="POST">
-                        <div class="form-grid">
-                            <div class="form-group"><label>Company Name</label><input type="text" name="Company" required></div>
-                            <div class="form-group"><label>Email</label><input type="email" name="Email" required></div>
-                            <div class="form-group full-width"><label>Position Name</label><input type="text" name="Position" required></div>
-                            <div class="form-group full-width"><label>Brief Requirements</label><textarea name="Brief" rows="3"></textarea></div>
-                            <button type="submit" class="btn btn-gold full-width">Send Quick Request</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+<h2>Hire a Talent Request</h2>
 
-    <footer class="footer" id="contact">
-        <div class="container">
-            <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" class="footer-logo">
-            <h2>Let's Build Your Team Together</h2>
-            <div class="social-links">
-                <a href="https://wa.me/2349025427977"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com/company/recruit-connect-nig-ltd/"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:Recruit_Connect@outlook.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p>07060432373 | 08028230847</p>
-            <p style="margin-top:40px; font-size:0.8rem; opacity:0.6;">&copy; 2026 Recruitconnect Nig Ltd. Built with precision for HR Excellence.</p>
-        </div>
-    </footer>
+<form action="https://formspree.io/f/mqeyebyl" method="POST">
 
-    <script>
-        // Modal Logic
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Stop scrolling
-        }
+<div class="form-grid">
 
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto'; // Resume scrolling
-        }
+<div class="form-group">
+<label>Company Name</label>
+<input type="text" name="company" required>
+</div>
 
-        // Close on outside click
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
+<div class="form-group">
+<label>Contact Person</label>
+<input type="text" name="contact" required>
+</div>
 
-        // Back to Top Button
-        let mybutton = document.getElementById("backToTopBtn");
-        window.onscroll = function() {
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        };
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email" required>
+</div>
 
-        function topFunction() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-    </script>
+<div class="form-group">
+<label>Phone</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group full-width">
+<button type="submit" class="btn btn-gold">
+Submit Talent Request
+</button>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+
+
+<!-- RECRUITMENT REQUEST SECTION -->
+
+<section id="recruitment-request" style="padding:100px 0;background:var(--primary-blue)">
+
+<div class="container">
+
+<div class="section-header">
+<h2 style="color:white">Submit a Recruitment Request</h2>
+</div>
+
+<div style="background:white;padding:50px;border-radius:20px">
+
+<form action="https://formspree.io/f/xlgpgnro" method="POST">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Company Name</label>
+<input type="text" name="company">
+</div>
+
+<div class="form-group">
+<label>Contact Person</label>
+<input type="text" name="contact">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email">
+</div>
+
+<div class="form-group">
+<label>Phone</label>
+<input type="tel" name="phone">
+</div>
+
+<div class="form-group">
+<label>Position</label>
+<input type="text" name="position">
+</div>
+
+<div class="form-group">
+<label>Number of Candidates</label>
+<input type="number" name="count">
+</div>
+
+<div class="form-group full-width" style="display:flex;gap:15px">
+
+<button type="submit" class="btn btn-gold" style="width:100%">
+Submit Request
+</button>
+
+<button type="button"
+onclick="openMentorshipRegister()"
+class="btn btn-outline"
+style="width:100%">
+Join Our Mentorship Program
+</button>
+
+</div>
+
+</div>
+</form>
+
+</div>
+</div>
+</section>
+
+
+<!-- MENTORSHIP REGISTRATION MODAL -->
+
+<div id="mentorshipRegisterModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn"
+onclick="closeMentorshipRegister()">&times;</span>
+
+<h2>Recruitconnect HR Mentorship Scholarship Program</h2>
+
+<form action="https://formspree.io/f/xjgagrkr" method="POST">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="phone1" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="phone2">
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label>Gender</label>
+<input type="text" name="gender">
+</div>
+
+<div class="form-group">
+<label>Current Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group full-width">
+
+<label>What mentorship class are you enrolling for?</label>
+
+<div class="checkbox-group">
+
+<label>
+<input type="radio" name="class" value="HR mentorship">
+HR mentorship class (₦12,000)
+</label>
+
+<label>
+<input type="radio" name="class" value="Data Analytics">
+Data Analytics (₦15,000)
+</label>
+
+</div>
+</div>
+
+<div class="form-group full-width">
+
+<label>
+Are you available to attend weekly Saturday and Sunday sessions
+for 2 months (6PM to 8PM)?
+</label>
+
+<div class="checkbox-group">
+
+<label>
+<input type="radio" name="availability" value="Yes"> Yes
+</label>
+
+<label>
+<input type="radio" name="availability" value="No"> No
+</label>
+
+</div>
+</div>
+
+<div class="form-group full-width">
+
+<label>Do you commit to active participation?</label>
+
+<div class="checkbox-group">
+
+<label>
+<input type="radio" name="commitment" value="Yes"> Yes
+</label>
+
+<label>
+<input type="radio" name="commitment" value="No"> No
+</label>
+
+</div>
+
+</div>
+
+<div class="form-group full-width">
+
+<label>How did you hear about this program?</label>
+
+<div class="checkbox-group">
+
+<label><input type="radio" name="source" value="WhatsApp">WhatsApp</label>
+<label><input type="radio" name="source" value="LinkedIn">LinkedIn</label>
+<label><input type="radio" name="source" value="Facebook">Facebook</label>
+<label><input type="radio" name="source" value="Instagram">Instagram</label>
+<label><input type="radio" name="source" value="Tiktok">Tiktok</label>
+<label><input type="radio" name="source" value="Referral">Referral</label>
+
+</div>
+
+</div>
+
+<div class="form-group full-width">
+<button type="submit" class="btn btn-gold">
+Submit Mentorship Registration
+</button>
+</div>
+
+</div>
+
+</form>
+
+</div>
+</div>
+
+
+<footer class="footer">
+<p>© 2026 Recruitconnect Nig Ltd. All rights reserved.</p>
+</footer>
+
+
+<script>
+
+function openHireModal(){
+document.getElementById("hireTalentModal").style.display="flex";
+}
+
+function closeHireModal(){
+document.getElementById("hireTalentModal").style.display="none";
+}
+
+function openMentorshipRegister(){
+document.getElementById("mentorshipRegisterModal").style.display="flex";
+}
+
+function closeMentorshipRegister(){
+document.getElementById("mentorshipRegisterModal").style.display="none";
+}
+
+window.onclick=function(e){
+
+if(e.target.className==="modal"){
+
+closeHireModal();
+closeMentorshipRegister();
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
