@@ -50,11 +50,11 @@
         .navbar-links a:hover { color: var(--secondary-gold); }
 
         /* --- Hero Section --- */
-      .hero-section {
+    .hero-section {
     position: relative;
     padding: 220px 0 160px;
     text-align: center;
-    background: url('/images/a_professional_digital_webpage_hero_section_for_re.png') no-repeat center center;
+    background: url('/images/a_professional_digital_webpage_hero_section_for_re.png') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -64,7 +64,7 @@
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(rgba(10, 35, 66, 0.65), rgba(10, 35, 66, 0.65));
+    background: linear-gradient(rgba(10,35,66,0.65), rgba(10,35,66,0.65));
     z-index: 1;
 }
 
@@ -74,53 +74,12 @@
     animation: fadeInUp 1.2s ease-out;
 }
 
-.hero-section h1 {
-    color: #ffffff;
-    font-size: 3.2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-.hero-section p {
-    font-size: 1.3rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    opacity: 0.95;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-}
-
-.hero-logo {
-    height: 130px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.4));
-    border-radius: 10px;
-}
-
-/* Button Glow Effects */
-.btn-gold {
-    box-shadow: 0 6px 20px rgba(255,183,3,0.4);
-    transition: 0.4s;
-}
-.btn-gold:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255,183,3,0.6);
-}
-
-/* Float Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section h1 { font-size: 2.3rem; }
+/* Scroll-based parallax effect */
+.hero-section[data-speed] {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
         /* --- Buttons --- */
