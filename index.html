@@ -41,62 +41,86 @@
         /* --- Navigation --- */
         .navbar { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
         .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .navbar-logo { display: flex; align-items: center; text-decoration: none; color: var(--primary-blue); font-weight: 700; font-size: 1.5rem; }
-        .navbar-logo img { height: 40px; margin-right: 10px; border-radius: 5px; }
+        .navbar-logo { display: flex; align-items: center; text-decoration: none; color: var(--primary-blue); font-weight: 700; font-size: 1.2rem; }
+        .navbar-logo img { height: 35px; margin-right: 10px; border-radius: 5px; }
+        
         .navbar-links { display: flex; gap: 20px; }
         .navbar-links a { text-decoration: none; color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .navbar-links a:hover { color: var(--secondary-gold); }
 
+        /* Mobile Menu Toggle */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--primary-blue); cursor: pointer; }
+
         /* --- Hero --- */
         .hero-section {
-            background-color: var(--primary-blue); color: var(--white); text-align: center; padding: 180px 0 120px;
+            background-color: var(--primary-blue); color: var(--white); text-align: center; padding: 140px 0 80px;
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734b6a4?q=80&w=2940&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
         .hero-overlay { background-color: rgba(10, 35, 66, 0.88); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .hero-content { position: relative; z-index: 10; }
-        .hero-logo { height: 130px; margin-bottom: 20px; }
+        .hero-logo { height: 100px; margin-bottom: 20px; }
 
         /* --- Founders --- */
-        .leaders-section { padding: 80px 0; background: var(--white); }
-        .leader-card { background: var(--light-gray-bg); padding: 40px; border-radius: 15px; margin-bottom: 40px; border-left: 8px solid var(--secondary-gold); display: flex; align-items: flex-start; gap: 30px; }
+        .leaders-section { padding: 60px 0; background: var(--white); }
+        .leader-card { background: var(--light-gray-bg); padding: 30px; border-radius: 15px; margin-bottom: 40px; border-left: 8px solid var(--secondary-gold); display: flex; align-items: flex-start; gap: 30px; }
         .leader-img { width: 220px; height: 280px; border-radius: 10px; object-fit: cover; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .leader-role { display: block; font-weight: 700; color: var(--secondary-gold); margin-bottom: 15px; text-transform: uppercase; font-size: 0.85rem; }
         .leader-bio { font-size: 0.95rem; color: var(--mid-text); text-align: justify; }
 
-        /* --- Services Grid --- */
-        .services-section { padding: 80px 0; }
-        .service-category { margin-bottom: 40px; padding: 30px; background-color: var(--light-gray-bg); border-radius: 12px; }
+        /* --- Services --- */
+        .services-section { padding: 60px 0; }
+        .service-category { margin-bottom: 40px; padding: 25px; background-color: var(--light-gray-bg); border-radius: 12px; }
         .service-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
         .service-list li { background-color: var(--white); padding: 15px 15px 15px 40px; border-radius: 8px; position: relative; font-weight: 600; cursor: pointer; transition: 0.3s; border: 1px solid #eee; }
         .service-list li:hover { border-color: var(--secondary-gold); transform: translateY(-2px); }
         .service-list li::before { content: '✓'; color: var(--secondary-gold); position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-weight: bold; }
 
         /* --- Signature Services --- */
-        .signature-services-section { padding: 80px 0; background-color: var(--primary-blue); color: var(--white); }
-        .signature-services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; list-style: none; padding: 0; }
+        .signature-services-section { padding: 60px 0; background-color: var(--primary-blue); color: var(--white); }
+        .signature-services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; list-style: none; padding: 0; }
         .signature-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,183,3,0.3); cursor: pointer; transition: 0.3s; }
         .signature-card:hover { background: rgba(255,255,255,0.1); }
         .signature-card h4 { color: var(--secondary-gold); margin-bottom: 10px; }
 
         /* --- Mentorship --- */
-        .mentorship-section { padding: 80px 0; background: var(--light-gray-bg); }
-        .form-frame { background: white; padding: 10px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 850px; margin: 0 auto; }
+        .mentorship-section { padding: 60px 0; background: var(--light-gray-bg); }
+        .form-frame { background: white; padding: 5px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 850px; margin: 0 auto; overflow: hidden; }
         .payment-box { max-width: 850px; margin: 30px auto; text-align: center; background: var(--primary-blue); color: white; padding: 30px; border-radius: 12px; }
 
         /* --- Modal --- */
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 35px; border-radius: 15px; max-width: 600px; width: 90%; position: relative; }
-        .close-btn { position: absolute; right: 20px; top: 10px; font-size: 2rem; cursor: pointer; }
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 100%; position: relative; }
+        .close-btn { position: absolute; right: 15px; top: 5px; font-size: 2rem; cursor: pointer; color: var(--mid-text); }
 
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; cursor: pointer; border: none; }
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; cursor: pointer; border: none; font-size: 0.9rem; }
         .btn-gold { background: var(--secondary-gold); color: var(--primary-blue); }
 
-        .footer { background: #111; color: #888; text-align: center; padding: 40px 0; }
+        .footer { background: #111; color: #888; text-align: center; padding: 40px 0; font-size: 0.9rem; }
 
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .leader-card { flex-direction: column; align-items: center; }
-            .navbar-links { display: none; }
+            .menu-toggle { display: block; }
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 65px; 
+                left: 0; 
+                width: 100%; 
+                background: white; 
+                padding: 20px; 
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+            .navbar-links.active { display: flex; }
+            .hero-section { padding: 120px 0 60px; }
+            .hero-logo { height: 80px; }
+            .section-header h2 { font-size: 1.8rem; }
+            .leader-card { flex-direction: column; align-items: center; text-align: center; padding: 20px; }
+            .leader-img { width: 100%; max-width: 250px; height: auto; }
+            .leader-bio { text-align: left; }
         }
     </style>
 </head>
@@ -108,7 +132,8 @@
                 <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg?raw=true" alt="Logo">
                 Recruitconnect
             </a>
-            <div class="navbar-links">
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <div class="navbar-links" id="nav-list">
                 <a href="#about">Founders</a>
                 <a href="#services">Services</a>
                 <a href="#signature">Signature</a>
@@ -134,7 +159,7 @@
                 <div class="section-header"><h2>Meet Our Founders</h2></div>
 
                 <div class="leader-card">
-                    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/Founder%20image.jpeg?raw=true" class="leader-img">
+                    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/Founder%20image.jpeg?raw=true" class="leader-img" alt="Tiamiyu Oluwaseun Michael">
                     <div class="leader-info">
                         <h3>Tiamiyu Oluwaseun Michael</h3>
                         <span class="leader-role">Founder & Principal Talent Consultant</span>
@@ -146,12 +171,14 @@
                 </div>
 
                 <div class="leader-card">
-                    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/co-founder%20image.jpeg?raw=true" class="leader-img">
+                    <img src="https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/co-founder%20image.jpeg?raw=true" class="leader-img" alt="Blessing Nnenna Okorie">
                     <div class="leader-info">
                         <h3>Blessing Nnenna Okorie</h3>
-                        <span class="leader-role">Co-Founder & Lead Data Strategist</span>
+                        <span class="leader-role">Co-Founder & Lead HR Strategist</span>
                         <div class="leader-bio">
-                            <p>Blessing specializes in HR Data Analytics and SQL. She ensures Recruitconnect leverages data-driven insights to optimize hiring quality and track organizational performance.</p>
+                            <p>Blessing Okorie is a Human Resources professional with over five years of experience supporting organizations in building strong HR systems and fostering productive workplace cultures. She holds a Bachelor’s degree in Economics from Ambrose Alli University and is currently pursuing an MBA with a specialization in Human Resources at Ahmadu Bello University.</p>
+                            <p>Over the years, she has developed expertise in recruitment, onboarding, employee relations, and HR operations. Blessing holds the globally recognized Professional in Human Resources – International (PHRi) certification.</p>
+                            <p>She is passionate about creating structured HR processes, enhancing employee experience, and helping organizations build engaged and high-performing teams.</p>
                         </div>
                     </div>
                 </div>
@@ -183,24 +210,6 @@
                         <li data-title="HR Data Analytics" data-description="Using SQL and reporting tools to optimize workforce performance.">HR Data Analytics & Reporting</li>
                     </ul>
                 </div>
-
-                <div class="service-category">
-                    <h3>Training & Development</h3>
-                    <ul class="service-list">
-                        <li data-title="Corporate Training" data-description="Soft skills, leadership, and customer service excellence training.">Corporate Training & Workshops</li>
-                        <li data-title="Technical HR Training" data-description="Training for HR teams on recruitment tech and data tools.">Technical HR Training</li>
-                        <li data-title="Career Development" data-description="Workshops for job seekers on CV writing and interview prep.">Career Development Workshops</li>
-                    </ul>
-                </div>
-
-                <div class="service-category">
-                    <h3>Payroll & Outsourcing</h3>
-                    <ul class="service-list">
-                        <li data-title="Payroll Processing" data-description="End-to-end payroll management and statutory compliance (PAYE, Pension).">Payroll Processing & Compliance</li>
-                        <li data-title="Full HR Outsourcing" data-description="Allowing you to focus on your core business while we manage your people.">Full HR Outsourcing</li>
-                        <li data-title="Staff Verification" data-description="Thorough background and criminal record checks for new hires.">Staff Verification & Background Checks</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -228,7 +237,7 @@
             <div class="container">
                 <div class="section-header"><h2>Mentorship Enrollment</h2></div>
                 <div class="form-frame">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform?embedded=true" width="100%" height="800" frameborder="0">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform?embedded=true" width="100%" height="600" frameborder="0">Loading…</iframe>
                 </div>
                 <div class="payment-box">
                     <h3>Secure Your Seat</h3>
@@ -240,7 +249,7 @@
             </div>
         </section>
 
-        <section id="contact" style="padding: 80px 0; text-align: center;">
+        <section id="contact" style="padding: 60px 0; text-align: center;">
             <div class="container">
                 <div class="section-header"><h2>Contact Us</h2></div>
                 <p>07060432373 | 08028230847</p>
@@ -264,14 +273,34 @@
     </div>
 
     <script>
+        // Toggle Mobile Menu
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navbar-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // Modal Logic
         const modal = document.getElementById('service-modal');
         const closeBtn = document.querySelector('.close-btn');
 
         document.querySelectorAll('.service-list li, .signature-card').forEach(item => {
             item.addEventListener('click', function() {
-                document.getElementById('modal-title').innerText = this.getAttribute('data-title');
-                document.getElementById('modal-description').innerText = this.getAttribute('data-description');
-                modal.style.display = 'flex';
+                const title = this.getAttribute('data-title');
+                const desc = this.getAttribute('data-description');
+                if(title && desc) {
+                    document.getElementById('modal-title').innerText = title;
+                    document.getElementById('modal-description').innerText = desc;
+                    modal.style.display = 'flex';
+                }
             });
         });
 
