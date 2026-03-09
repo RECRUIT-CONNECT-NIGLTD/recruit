@@ -53,33 +53,29 @@
     .hero-section {
     position: relative;
     padding: 220px 0 160px;
+    color: var(--white);
     text-align: center;
-    background: url('/images/a_professional_digital_webpage_hero_section_for_re.png') no-repeat center center fixed;
+    background: 
+        linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.6)), /* stronger blue overlay for professional look */
+        url('https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/237e8d54-3795-443a-b268-25f9bc60d010.png?raw=true') no-repeat center center;
     background-size: cover;
     overflow: hidden;
 }
 
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(rgba(10,35,66,0.65), rgba(10,35,66,0.65));
-    z-index: 1;
+.hero-section h1 {
+    color: #FFFFFF;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4); /* subtle shadow for text readability */
 }
 
-.hero-content {
-    position: relative;
-    z-index: 10;
-    animation: fadeInUp 1.2s ease-out;
-}
-
-/* Scroll-based parallax effect */
-.hero-section[data-speed] {
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero-section p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* subtle shadow for paragraph */
 }
 
         /* --- Buttons --- */
