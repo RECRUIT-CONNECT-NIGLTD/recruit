@@ -238,6 +238,15 @@
                 </div>
             </div>
         </form>
+<!-- Payment Box (hidden initially) -->
+<div id="mentorshipPaymentBox" class="payment-box" style="display:none;">
+    <h3>Secure Your Seat</h3>
+    <p>Bank: <strong>Palmpay</strong> | Account: <strong>8164475510</strong> | Name: <strong>Okorie Nnenna Blessing</strong></p>
+    <a href="https://wa.me/2349025427977" class="btn btn-gold" style="margin-top:15px; background:#25D366; color:white; border:none">
+        <i class="fab fa-whatsapp"></i> Chat with Admin
+    </a>
+</div>
+        
     </div>
 </div>
 
@@ -448,18 +457,7 @@
             </div>
         </section>
 
-        <div id="mentorshipModal">
-            <div class="modal-form-content">
-                <span class="close-btn" onclick="closeMentorship()">&times;</span>
-                <div class="section-header"><h2>Mentorship Enrollment</h2></div>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcBzGxuOnbBscst-5qG0_Zu2EZyjU84t97ejeNgvC4g1rIGA/viewform?embedded=true&hl=en" width="100%" height="500" frameborder="0">Loading…</iframe>
-                <div class="payment-box">
-                    <h3>Secure Your Seat</h3>
-                    <p>Bank: <strong>Palmpay</strong> | Account: <strong>8164475510</strong> | Name: <strong>Okorie Nnenna Blessing</strong></p>
-                    <a href="https://wa.me/2349025427977" class="btn btn-gold" style="margin-top:15px; background:#25D366; color:white; border:none"><i class="fab fa-whatsapp"></i> Chat with Admin</a>
-                </div>
-            </div>
-        </div>
+       
 
         <section id="contact" style="padding: 100px 0; text-align: center;">
             <div class="container">
@@ -507,6 +505,26 @@
             }
         };
 
+        // Mentorship Form Submission
+const mentorshipForm = document.querySelector("#mentorshipFormModal form");
+const paymentBox = document.getElementById("mentorshipPaymentBox");
+
+mentorshipForm.onsubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(mentorshipForm.action, {
+        method: 'POST',
+        body: new FormData(mentorshipForm),
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        mentorshipForm.style.display = "none";   // hide the form
+        paymentBox.style.display = "block";      // show payment details
+    } else {
+        alert("There was an error submitting the form. Please try again.");
+    }
+};
+
         // Modal Controls
         function openHireModal() { document.getElementById('hireTalentModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         function closeHireModal() { document.getElementById('hireTalentModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
@@ -542,13 +560,13 @@ function closeMentorshipModal() {
         function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 
         // Global Close Click
-        window.onclick = (e) => { 
-            if (e.target.className === 'modal') {
-                closeHireModal();
-                closeMentorship();
-                sModal.style.display = 'none';
-            }
-        };
+      window.onclick = (e) => { 
+    if (e.target.classList.contains('modal')) {
+        closeHireModal();
+        closeMentorshipModal();
+        sModal.style.display = 'none';
+    }
+};
     </script>
 </body>
 </html>
