@@ -50,90 +50,119 @@
         .navbar-links a:hover { color: var(--secondary-gold); }
 
         /* --- Hero Section --- */
-   .hero-section {
+ /* Hero Section */
+.hero-section {
     position: relative;
-    padding: 220px 0 160px;
-    color: #fff;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background: url('https://github.com/RECRUIT-CONNECT-NIGLTD/recruit/blob/main/237e8d54-3795-443a-b268-25f9bc60d010.png?raw=true') no-repeat center center;
-    background-size: cover;
+    background: url('https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/237e8d54-3795-443a-b268-25f9bc60d010.png') no-repeat center center/cover;
+    color: #fff;
+    padding: 180px 20px 100px;
     overflow: hidden;
 }
 
-/* Gradient overlay with animation */
-.hero-section::before {
-    content: "";
+.hero-overlay {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top:0; left:0; width:100%; height:100%;
     background: linear-gradient(120deg, rgba(10,35,66,0.8), rgba(10,35,66,0.6), rgba(10,35,66,0.8));
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
     z-index: 1;
 }
 
-/* Vignette effect */
-.hero-section::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%);
-    pointer-events: none;
-    z-index: 2;
-}
-
+/* Hero Content */
 .hero-content {
-    position: relative; 
+    position: relative;
     z-index: 10;
+    max-width: 100%;
 }
 
-/* Text styling */
+.hero-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
 .hero-section h1 {
-    color: #fff;
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 20px;
     text-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
 .hero-section p {
-    font-size: 1.3rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    opacity: 0.95;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Particle container */
-.particles {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-    z-index: 3;
-    pointer-events: none;
+.hero-buttons .btn {
+    margin: 5px;
 }
 
-/* Particle animation */
-.particle {
-    position: absolute;
-    width: 5px; height: 5px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    animation: float 20s linear infinite;
-    opacity: 0.7;
-}
+/* Particles */
+.particles { position: absolute; top:0; left:0; width:100%; height:100%; z-index: 2; pointer-events: none; }
+.particle { position:absolute; background: rgba(255,255,255,0.2); border-radius:50%; animation: float 20s linear infinite; opacity:0.7; }
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Keyframes for particle animation */
 @keyframes float {
-    0% { transform: translateY(0) translateX(0); }
-    100% { transform: translateY(-1200px) translateX(200px); }
+    0% { transform: translateY(0) translateX(0);}
+    100% { transform: translateY(-1200px) translateX(200px);}
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Responsive Hero & Navbar */
+@media (max-width: 1024px) {
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section p { font-size: 1.1rem; }
+    .hero-logo { width: 120px; }
+}
+
+@media (max-width: 768px) {
+    .hero-section { padding: 150px 15px 80px; }
+    .hero-section h1 { font-size: 2rem; }
+    .hero-section p { font-size: 1rem; }
+    .hero-logo { width: 100px; }
+    .navbar-links { display: none; }
+    .hero-buttons .btn { width: 100%; margin-top: 10px; }
+}
+
+@media (max-width: 480px) {
+    .hero-section { padding: 120px 10px 60px; }
+    .hero-section h1 { font-size: 1.6rem; }
+    .hero-section p { font-size: 0.9rem; }
+    .hero-logo { width: 90px; }
 }
 
       
@@ -227,32 +256,38 @@
 
     <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="navbar-logo">
-                <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" alt="Logo">
-                Recruitconnect
-            </a>
-            <div class="navbar-links">
-                <a href="#about">Leaders</a>
-                <a href="#services">Services</a>
-                <a href="#signature">Signature</a>
-                <a href="#contact">Contact</a>
-            </div>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="navbar-logo">
+            <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" alt="Logo">
+            Recruitconnect
+        </a>
+        <div class="navbar-links">
+            <a href="#about">Leaders</a>
+            <a href="#services">Services</a>
+            <a href="#signature">Signature</a>
+            <a href="#contact">Contact</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <header class="hero-section">
+<!-- Hero Section -->
+<header class="hero-section">
+    <div class="hero-overlay"></div>
     <div class="hero-content container">
-        <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" class="hero-logo">
+        <img src="https://raw.githubusercontent.com/RECRUIT-CONNECT-NIGLTD/recruit/main/WhatsApp%20Image%202025-08-04%20at%2009.55.46.jpeg" class="hero-logo" alt="Recruitconnect Logo">
         <h1>Helping Businesses Hire the Right Talent Faster.</h1>
         <p>Recruitconnect Nig Ltd provides end-to-end recruitment and HR solutions for startups, SMEs, and growing organizations across Nigeria.</p>
-        <div style="margin-top: 30px;">
+        <div class="hero-buttons">
             <button onclick="openHireModal()" class="btn btn-gold">Hire a Talent</button>
-            <a href="#recruitment-request" class="btn btn-outline">Submit Recruitment Request</a>
             <button onclick="openMentorshipModal()" class="btn btn-outline">Join Our Mentorship Program</button>
+            <a href="#recruitment-request" class="btn btn-outline">Submit Recruitment Request</a>
         </div>
-     <div class="particles">
+    </div>
+
+    <!-- Particles -->
+    <div class="particles">
         <div class="particle" style="top:80%; left:10%; width:4px; height:4px;"></div>
         <div class="particle" style="top:90%; left:50%; width:6px; height:6px;"></div>
         <div class="particle" style="top:70%; left:30%; width:3px; height:3px;"></div>
